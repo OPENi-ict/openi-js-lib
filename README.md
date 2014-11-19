@@ -1,23 +1,42 @@
-openi-js-lib
+OPENi-js-lib
 ============
+Here you can find all the required details towards integrating your web application with OPENi via js SDK. 
 
-This a demo HTML/Javascript project that uses the OPENi JS SDK/lib and is based on [demo2](https://demo2.openi-ict.eu) vm.
+Assumption: You have access to OPENi [demo2](https://demo2.openi-ict.eu) vm. 
 
-You can use the openi-js-lib.js library in your project to initialize OPENi and use its helper functions or any other available OPENi service/API which is exposed through Swagger.
+
+In the following sections you can find:
+ 
+1. OPENi js SDK lib documentation as well as a small demo project. 
+1. WP4 demo projects that use in an axtended way OPENi js lib. 
+1. OPENi web Authorization/Authentication (tutorial and lib) 
+1. OPENi web Authorization/Authentication (tutorial and lib) 
+
+
+# OPENi js SDK lib
+ 
+You can use the openi-js-lib.js library in your project to initialize OPENi and use its helper functions or any other available OPENi Service/API which is 
+exposed through Swagger.
+
+Note: A simple demo app is included. This a demo HTML/Javascript project that uses the OPENi JS SDK/lib and is based on [demo2](https://demo2.openi-ict.eu) vm.
+
+
 
 ## Available helper functions:
 
- All function have success/error callbacks which alse include the corresponding response :
+Note:All functions have success/error callbacks, which include the corresponding response.
+
+#### Initiate as.... 
 
 ```
-initOPENi(success, error)
+initOPENi(openi_domain, success, error)
 ```
 
- Run your code in success callback. OPENi apis will be available for use here.
+ OPENi APIs will be available for use now. Run your code in success callback. 
 
- For example:
+* Example:
+ Creating a new object in a Cloudlet within initOPENi success callback:*
 
- Creating a new object in a cloudlet
 
 
         var args = {
@@ -39,19 +58,26 @@ initOPENi(success, error)
         });
 
 
+#### Create a New User as...
 
 ````
 createUser(username, password, success, error)
 ````
 
+#### Check login status as...
 
+````
+checkLoginStatus(loggedIn, notLoggedIn)
+````
+
+#### Login and Existing User as...
 
 ````
 loginUser(username, password, clientId, success, error)
 ````
 
 
-
+#### Create a New Object as...
 ````
 createObject(cloudletId, typeId, data, token, success, error)
 ````
@@ -59,6 +85,7 @@ createObject(cloudletId, typeId, data, token, success, error)
  "data" is a JSON object which addheres to the OPENi type of typeid
 
 
+#### Search Objects whithin a Cloudlet via....
 ```
 searchCloudletObjects(cloudletId, type, with_property, property_filter, id_only, token, success, error)
 ```
@@ -69,16 +96,28 @@ searchCloudletObjects(cloudletId, type, with_property, property_filter, id_only,
 
  type,with_property,property_filter,id_only can be empty ("") if not needed.
 
+
+#### Search an objects accross Cloudlets via ....
 ````
 searchObjects(type, with_property, property_filter, id_only, token, success, error)
 ````
 
  Like searchCloudletObjects, search across all cloudlets.
 
-
+#### Adds the Authorization header via...
 ````
 addTokenHeader(token)
 ````
 
- Adds the Authorization header.
 
+
+## WP4 demo projects that use in an axtended way OPENi js lib. 
+
+
+## OPENi web Authorization/Authentication (tutorial and lib)
+
+This section allows you to enable OPENi Registration/Log-in/Permissions diolog. 
+
+## OPENi web Permission Visualization (tutorial and lib) 
+
+This section allows you to enable OPENi Permission Visualization template.

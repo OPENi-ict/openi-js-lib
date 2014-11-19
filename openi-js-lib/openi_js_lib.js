@@ -2,13 +2,12 @@
  * Created by nstasinos on 18/11/2014.
  */
 
-var urlServer = "https://demo2.openi-ict.eu/api-spec/v1";
+var urlServer = "https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";
 var openi_token = null;
 
-//
-//      js utils
-//
-
+//==============================
+//          js utils
+//==============================
 function loadScript(url, callback) {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -45,14 +44,29 @@ function isValidJSON(str){
     }
 }
 
-/* ============================
-*       OPENi utilities
-*  ============================*/
+//=================================
+//          OPENi utilities
+//=================================
 
 function addTokenHeader(token) {
     window.authorizations.add("key", new ApiKeyAuthorization("Authorization", token, "header"));
 }
 
+function checkLoginStatus(loggedIn, notLoggedIn){
+    if (localStorage.OUAT == undefined || localStorage.OUAT == null){
+        // redirect user to login?
+        console.log("User not authenticated!!!");
+        notLoggedIn();
+    }
+    else {
+        openi_token = localStorage.OUAT;
+        loggedIn(openi_token);
+    }
+}
+
+//
+//  create/login user should redirect to OPENi account page (or use an iframe?)
+//
 function createUser(username, password, success, error) {
 
     console.log("Creating cloudlet/user");
@@ -94,6 +108,7 @@ function loginUser(username, password, clientId, success, error) {
         if (response.status == 200) {
             var data = JSON.parse(response.data);
             var session = data.session;
+            localStorage.setItem("OUST", session);
             var json = JSON.stringify({
                 "session": session,
                 "client_id": clientId
@@ -104,6 +119,8 @@ function loginUser(username, password, clientId, success, error) {
                 console.log(response);
                 var data = JSON.parse(response.data);
                 var token = data.token;
+                openi_token = token;
+                localStorage.setItem("OUAT", token);
                 success(token);
             }, function (ferror) {
                 error(ferror);
@@ -113,6 +130,45 @@ function loginUser(username, password, clientId, success, error) {
         error(ferror);
     });
 
+}
+
+function loginWithSessionTokenURL(success, error){
+    var session = getURLparam("OUST");
+    var clientId = getURLparam("clientId");
+    localStorage.setItem("OUST", session);
+    var json = JSON.stringify({
+        "session": session,
+        "client_id": clientId
+    });
+    swagger.apis.simple_auth.authorizeClient({
+        body: json
+    }, function (response) {
+        console.log(response);
+        var data = JSON.parse(response.data);
+        var token = data.token;
+        openi_token = token;
+        localStorage.setItem("OUAT", token);
+        success(token);
+    }, function (ferror) {
+        error(ferror);
+    })
+}
+
+function getObjectWithID(cloudletId, objectId, token, success, error){
+    var args = {
+        cloudletId: cloudletId,
+        objectId: objectId,
+        "Authorization": token
+    };
+    swagger.apis.objects.getObject(args, function (response) {
+        var data = JSON.parse(response.data);
+        //var data = JSON.parse(upperData._data.string);
+        //var revision = upperData._revision;
+        success(data)
+    }, function (swagger_error){
+        console.log(swagger_error);
+        error(swagger_error);
+    });
 }
 
 function createObject(cloudletId, typeId, data, token, success, error){
@@ -239,16 +295,28 @@ function searchObjects(type, with_property, property_filter, id_only, token, suc
     });
 }
 
-function initOPENi(success, error){
+function initOPENi(openi_domain, success, error){
     loadScript("https://demo2.openi-ict.eu/api-docs/lib/shred.bundle.js", function () {
         loadScript("https://demo2.openi-ict.eu/api-docs/lib/swagger.js", function () {
             //function initSwagger(success) {
+            if(openi_domain != null || openi_domain != undefined)
+                urlServer = "https://"+openi_domain+"/api-spec/v1";
             window.swagger = new SwaggerApi({
                 url: urlServer,
                 success: function() {
                     if (swagger.ready === true) {
                         console.log("swagger is ready");
-                        success();
+                        if (!(getURLparam("OUST") == null)) {
+                            //var clientId = getURLparam("clientId")
+                            loginWithSessionTokenURL(function() {
+                                success();
+                            });
+                        }
+                        else {
+                            console.log("session token not in url");
+                            success();
+                        }
+
                     } else {
                         console.log("swagger is not ready");
                     }
@@ -262,5 +330,3 @@ function initOPENi(success, error){
         });
     });
 }
-
-//initOPENi();
