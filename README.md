@@ -3,7 +3,7 @@ openi-js-lib
 
 This a demo HTML/Javascript project that uses the OPENi JS SDK/lib and is based on [demo2](https://demo2.openi-ict.eu) vm.
 
-You can use the openi-js-lib.js library in your project to initialize OPENi and use its helper functions or any other available OPENi service which is exposed through Swagger.
+You can use the openi-js-lib.js library in your project to initialize OPENi and use its helper functions or any other available OPENi service/API which is exposed through Swagger.
 
 ## Available helper functions:
 
