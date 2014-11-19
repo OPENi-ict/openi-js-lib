@@ -7,17 +7,17 @@ You can use the openi-js-lib.js library in your project to initialize OPENi and 
 
 ## Available helper functions:
 
-All function have success/error callbacks which alse include the corresponding response :
+ All function have success/error callbacks which alse include the corresponding response :
 
-* ```
-    initOPENi(success, error)
+```
+initOPENi(success, error)
 ```
 
-    Run your code in success callback. OPENi apis will be available for use here.
+ Run your code in success callback. OPENi apis will be available for use here.
 
-    For example:
+ For example:
 
-    Creating a new object in a cloudlet
+ Creating a new object in a cloudlet
 
 
         var args = {
@@ -40,45 +40,45 @@ All function have success/error callbacks which alse include the corresponding r
 
 
 
-* ````
-    createUser(username, password, success, error)
+````
+createUser(username, password, success, error)
 ````
 
 
 
-* ````
-    loginUser(username, password, clientId, success, error)
+````
+loginUser(username, password, clientId, success, error)
 ````
 
 
 
-* ````
-    createObject(cloudletId, typeId, data, token, success, error)
+````
+createObject(cloudletId, typeId, data, token, success, error)
 ````
 
-    "data" is a JSON object which addheres to the OPENi type of typeid
+ "data" is a JSON object which addheres to the OPENi type of typeid
 
 
-* ```
-    searchCloudletObjects(cloudletId, type, with_property, property_filter, id_only, token, success, error)
+```
+searchCloudletObjects(cloudletId, type, with_property, property_filter, id_only, token, success, error)
 ```
 
-    Search whithin one Cloudlet.
+ Search whithin one Cloudlet.
 
-    cloudletId and token are required.
+ cloudletId and token are required.
 
-    type,with_property,property_filter,id_only can be empty ("") if not needed.
+ type,with_property,property_filter,id_only can be empty ("") if not needed.
 
-
-* ````
-    searchObjects(type, with_property, property_filter, id_only, token, success, error)
+````
+searchObjects(type, with_property, property_filter, id_only, token, success, error)
 ````
 
-    Like searchCloudletObjects, search across all cloudlets.
+ Like searchCloudletObjects, search across all cloudlets.
 
 
-* ````
-    addTokenHeader(token)
+````
+addTokenHeader(token)
 ````
 
-     Adds the Authorization header.
+ Adds the Authorization header.
+
