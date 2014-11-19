@@ -5,7 +5,7 @@ This a demo HTML/Javascript project that uses the OPENi JS SDK/lib and is based 
 
 You can use the openi-js-lib.js library in your project to initialize OPENi and use its helper functions or any other available OPENi service which is exposed through Swagger.
 
-##Available helper functions:
+## Available helper functions:
 
 All function have success/error callbacks which alse include the corresponding response :
 
