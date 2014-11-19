@@ -9,7 +9,9 @@ You can use the openi-js-lib.js library in your project to initialize OPENi and 
 
 All function have success/error callbacks which alse include the corresponding response :
 
-````initOPENi(success, error)````
+* ```javascript
+    initOPENi(success, error)
+```
 
 Run your code in success callback. OPENi apis will be available for use here.
 
@@ -17,6 +19,7 @@ For example:
 
 Creating a new object in a cloudlet
 
+* ```javascript
     var args = {
         "cloudletId": cloudletId,
         "Authorization": token
@@ -34,20 +37,29 @@ Creating a new object in a cloudlet
     }, function (error) {
         console.log(error);
     });
+```
 
-````createUser(username, password, success, error)````
-
-
-
-````loginUser(username, password, clientId, success, error)````
-
+* ```javascript
+    createUser(username, password, success, error)
+```
 
 
-````createObject(cloudletId, typeId, data, token, success, error)````
+
+* ```javascript
+    loginUser(username, password, clientId, success, error)
+```
+
+
+
+* ```javascript
+    createObject(cloudletId, typeId, data, token, success, error)
+```
 
 "data" is a JSON object which addheres to the OPENi type of typeid
 
-````searchCloudletObjects(cloudletId, type, with_property, property_filter, id_only, token, success, error)````
+* ```javascript
+    searchCloudletObjects(cloudletId, type, with_property, property_filter, id_only, token, success, error)
+```
 
 Search whithin one Cloudlet.
 
@@ -55,10 +67,14 @@ cloudletId and token are required.
 
 type,with_property,property_filter,id_only can be empty ("") if not needed.
 
-````searchObjects(type, with_property, property_filter, id_only, token, success, error)````
+* ```javascript
+    searchObjects(type, with_property, property_filter, id_only, token, success, error)
+```
 
 Like searchCloudletObjects, search across all cloudlets.
 
-````addTokenHeader(token)````
+* ```javascript
+    addTokenHeader(token)
+```
 
 Adds the Authorization header.
