@@ -5,8 +5,8 @@
 var urlServer = "https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";    //default
 var openi_token = null;
 var global_openi_domain = "demo2.openi-ict.eu"; //default
-var openiUserPermPath = "";
-var openiUserAuthPath = "";
+var openiUserPermPath = "/openi-js-auth/permissions/settings.html";
+var openiUserAuthPath = "/openi-js-auth/openi_account/openi_account.html";
 
 //==============================
 //          js utils

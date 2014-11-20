@@ -9,7 +9,7 @@ initOPENi(null, function(){
     //checkLoginStatus()
     //loginUser("nikos","nikos","velti",function(token){
     checkLoginStatus(function loggedin(token){
-
+        alert("tests.js:12 \n\nYou re logged in!");
         searchObjects("t_20111c27fee71099a580c6e06332dbd7-163","","",true, token,function(data){
             alert("tests.js:14 \n\nTest Search: \n"+JSON.stringify(data));
         }, function(error){

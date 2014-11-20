@@ -162,7 +162,7 @@ function createUser(username, password, client_id) {
                     if (response.status == 200) {
                         var data = JSON.parse(response.data);
                         var session = data.session;
-                        localStorage.set("session", session);
+                        localStorage.setItem("session", session);
                         var json = JSON.stringify({
                             "session": session,
                             "client_id": client_id
