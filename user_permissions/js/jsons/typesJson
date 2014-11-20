@@ -1,0 +1,140 @@
+[
+    {
+        "@context": [
+            {
+                "@property_name": "username",
+                "@property_context": {
+                    "@id": "openi/username",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "usertype",
+                "@property_context": {
+                    "@id": "openi/usertype",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "password",
+                "@property_context": {
+                    "@id": "openi/password",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "email",
+                "@property_context": {
+                    "@id": "openi/email",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/user"
+    },
+
+
+    {
+        "@context": [
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "from",
+                "@property_context": {
+                    "@id": "openi/from",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/video"
+    },
+
+
+    {
+        "@context": [
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "from",
+                "@property_context": {
+                    "@id": "openi/from",
+                    "@openi_type": "string"
+                }
+            }
+            ,
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/photo"
+    },
+
+    {
+        "@context": [
+            {
+                "@property_name": "name",
+                "@property_context": {
+                    "@id": "openi/name",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "email",
+                "@property_context": {
+                    "@id": "openi/email",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/account"
+    },
+
+    {
+        "@context": [
+            {
+                "@property_name": "weight",
+                "@property_context": {
+                    "@id": "openi/weight",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "height",
+                "@property_context": {
+                    "@id": "openi/height",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/health"
+    }
+
+]

@@ -1,0 +1,540 @@
+[
+    {
+        "@context": [
+            {
+                "@property_name": "personalization_gender",
+                "@property_context": {
+                    "@id": "openi/personalization_gender",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_device_os",
+                "@property_context": {
+                    "@id": "openi/personalization_device_os",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_device_id",
+                "@property_context": {
+                    "@id": "openi/personalization_device_id",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/Context"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "username",
+                "@property_context": {
+                    "@id": "openi/username",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "first_name",
+                "@property_context": {
+                    "@id": "openi/first_name",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "last_name",
+                "@property_context": {
+                    "@id": "openi/last_name",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "resource_uri",
+                "@property_context": {
+                    "@id": "openi/resource_uri",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "is_active",
+                "@property_context": {
+                    "@id": "openi/is_active",
+                    "@openi_type": "boolean"
+                }
+            },
+            {
+                "@property_name": "email",
+                "@property_context": {
+                    "@id": "openi/email",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "is_superuser",
+                "@property_context": {
+                    "@id": "openi/is_superuser",
+                    "@openi_type": "boolean"
+                }
+            },
+            {
+                "@property_name": "is_staff",
+                "@property_context": {
+                    "@id": "openi/is_staff",
+                    "@openi_type": "boolean"
+                }
+            },
+            {
+                "@property_name": "last_login",
+                "@property_context": {
+                    "@id": "openi/last_login",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "openi/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "password",
+                "@property_context": {
+                    "@id": "openi/password",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "id",
+                "@property_context": {
+                    "@id": "openi/id",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "date_joined",
+                "@property_context": {
+                    "@id": "openi/date_joined",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/User"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "profile",
+                "@property_context": {
+                    "@id": "openi/profile",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "openi/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "openi/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "openi/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "id",
+                "@property_context": {
+                    "@id": "openi/id",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "resource_uri",
+                "@property_context": {
+                    "@id": "openi/resource_uri",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/Device"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "openi/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "openi/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "result",
+                "@property_context": {
+                    "@id": "openi/result",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "title",
+                "@property_context": {
+                    "@id": "openi/title",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "text",
+                "@property_context": {
+                    "@id": "openi/text",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "metric",
+                "@property_context": {
+                    "@id": "openi/metric",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "openi/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time",
+                "@property_context": {
+                    "@id": "openi/time",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/Measurement"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "last_login",
+                "@property_context": {
+                    "@id": "openi/last_login",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "uid",
+                "@property_context": {
+                    "@id": "openi/uid",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "resource_uri",
+                "@property_context": {
+                    "@id": "openi/resource_uri",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "provider",
+                "@property_context": {
+                    "@id": "openi/provider",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "extra_data",
+                "@property_context": {
+                    "@id": "openi/extra_data",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "id",
+                "@property_context": {
+                    "@id": "openi/id",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "date_joined",
+                "@property_context": {
+                    "@id": "openi/date_joined",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/SocialAccount"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "profile",
+                "@property_context": {
+                    "@id": "openi/profile",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "openi/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "tags",
+                "@property_context": {
+                    "@id": "openi/tags",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "openi/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "height",
+                "@property_context": {
+                    "@id": "openi/height",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "width",
+                "@property_context": {
+                    "@id": "openi/width",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "location",
+                "@property_context": {
+                    "@id": "openi/location",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "openi/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time",
+                "@property_context": {
+                    "@id": "openi/time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "id",
+                "@property_context": {
+                    "@id": "openi/id",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "resource_uri",
+                "@property_context": {
+                    "@id": "openi/resource_uri",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/Photo"
+    }
+]
+
+//  demo1
+//[
+// {"id":"t_86a035f549e7b0200295b325a5017d2b-433"},
+// context
+
+// {"id":"t_9f69b3afd7e3fcf9c15fdb0d150d1e5a-1331"},
+// user
+
+// t_7ea9e1db966accdd139222c9d33202bc-804
+// device
+
+// t_30f13a9ed5288a2d7960ede0a9157e28-981
+// measurement
+
+// [{"id":"t_d25d6cb49f2226ab412057bce7ad9a99-735"},
+// socialaccount
+
+// {"id":"t_7378a4f73b49482f2fe19f512ada1af1-1267"}]
+//  photo
+
+// ] ---------------------
+
+//  velti-vm
+//[{"id":"t_86a035f549e7b0200295b325a5017d2b-433"},
+//{"id":"t_9f69b3afd7e3fcf9c15fdb0d150d1e5a-1331"},
+//{"id":"t_7ea9e1db966accdd139222c9d33202bc-804"},
+//{"id":"t_30f13a9ed5288a2d7960ede0a9157e28-981"}]
+// [{"id":"t_d25d6cb49f2226ab412057bce7ad9a99-735"},  // socialaccount
+// {"id":"t_7378a4f73b49482f2fe19f512ada1af1-1267"}]  //  photo
+// -----------------
+
+
+// demo2 cloudletid: c_ee17094a44d7a1b9b5e7d5ade1e3ad01-90
+//  demo1 cloudletid: c_9414cbdc83691c35921f15fef48de54b-90
+
+/*
+
+ localStorage.cloudletId
+ localStorage.contextUserObjectId
+ localStorage.userObjectId
+ localStorage.contextDeviceObjectId
+ localStorage.deviceObjectId
+ weightMeasurementObjectId
+*/
+
+// context
+"@data": {
+"personalization_gender": genre,
+"personalization_device_os": " ",
+"personalization_device_id": " "
+}
+
+// user-profile
+"@data": {
+"username": data.username,
+"first_name": name,
+"last_name": surname,
+"resource_uri": data.resource_uri,
+"is_active": data.is_active,
+"email": email,
+"is_superuser": data.is_superuser,
+"is_staff": data.is_staff,
+"last_login": data.last_login,
+"context": data.context,
+"password": data.password,
+"id": data.id,
+"date_joined": data.date_joined
+}
+
+//measurement
+"@data": {
+"context": " ",
+"From": " ",
+"result": height,
+"service": " ",
+"title": " ",
+"url": " ",
+"text": " ",
+"metric": "cm",
+"object_type": " ",
+"time": " "
+}
+
+// device
+"@data": {
+"profile": " ",
+"From": localStorage.userObjectId,
+"context": localStorage.contextDeviceObjectId,
+"service": " ",
+"url": " ",
+"object_type": " ",
+"id": " ",
+"resource_uri": " "
+}
+
+// socialaccount
+"@data":{
+"last_login": "datetime",
+"uid": "",
+"resource_uri": "",
+"provider": "",
+"extra_data": "",
+"id": 0,
+"date_joined": "datetime"
+}
+
+// photo
+
+"@data":{
+"profile": "",
+"From": "",
+"service": "",
+"tags": "",
+"url": "",
+"object_type": "",
+"height": "",
+"width": "",
+"location": "",
+"context": "related",
+"time": "",
+"id": 0,
+"resource_uri": ""
+}
+
+/*
+*
+*
+*
+* */

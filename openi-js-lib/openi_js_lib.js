@@ -2,8 +2,11 @@
  * Created by nstasinos on 18/11/2014.
  */
 
-var urlServer = "https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";
+var urlServer = "https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";    //default
 var openi_token = null;
+var global_openi_domain = "demo2.openi-ict.eu"; //default
+var openiUserPermPath = "";
+var openiUserAuthPath = "";
 
 //==============================
 //          js utils
@@ -43,10 +46,12 @@ function isValidJSON(str){
         return false
     }
 }
+//===============================================
 
-//=================================
-//          OPENi utilities
-//=================================
+
+//===============================================
+//                 OPENi utilities
+//===============================================
 
 function addTokenHeader(token) {
     window.authorizations.add("key", new ApiKeyAuthorization("Authorization", token, "header"));
@@ -63,6 +68,17 @@ function checkLoginStatus(loggedIn, notLoggedIn){
         loggedIn(openi_token);
     }
 }
+
+// temp
+// TODO check if logged in
+function redirectToOPENiUserPermissions(clientId){
+    location.replace("http://" + global_openi_domain + openiUserPermPath + "?clientId=" + clientId + "&redirectURI=" + redirectURI + "&OUST=" + localStorage.OUST)
+}
+
+function redirectToOPENiUserAuth(clientId, redirectURI){
+    location.replace("http://" + global_openi_domain + openiUserAuthPath + "?clientId=" + clientId + "&redirectURI=" + redirectURI)
+}
+// /temp
 
 //
 //  create/login user should redirect to OPENi account page (or use an iframe?)
@@ -299,8 +315,10 @@ function initOPENi(openi_domain, success, error){
     loadScript("https://demo2.openi-ict.eu/api-docs/lib/shred.bundle.js", function () {
         loadScript("https://demo2.openi-ict.eu/api-docs/lib/swagger.js", function () {
             //function initSwagger(success) {
-            if(openi_domain != null || openi_domain != undefined)
-                urlServer = "https://"+openi_domain+"/api-spec/v1";
+            if(openi_domain != null || openi_domain != undefined) {
+                urlServer = "https://" + openi_domain + "/api-spec/v1";
+                global_openi_domain = openi_domain
+            }
             window.swagger = new SwaggerApi({
                 url: urlServer,
                 success: function() {

@@ -1,0 +1,2223 @@
+[
+    {
+        "@context": [
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "light",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/light",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "deep",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/deep",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "awake",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/awake",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "rem",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/rem",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "times_woken",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/times_woken",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Sleep_post",
+        "@id": "t_00dd5792bfaffe6213fe665b8fe1ba7c-1336",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_00dd5792bfaffe6213fe665b8fe1ba7c-1336",
+        "_date_created ": "2014-09-22T16:04:01.456Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "from",
+                "@property_context": {
+                    "@id": "openi/from",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/photo",
+        "@id": "t_026570539e1f4911ec39655d663b7f8e-315",
+        "@location": "https://193.1.188.34/api/v1/types/t_026570539e1f4911ec39655d663b7f8e-315",
+        "_date_created ": "2014-09-16T08:47:43.738Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "title",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/title",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "text",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/text",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Status_post",
+        "@id": "t_02f097888a45ed038cff64e59de6b718-982",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_02f097888a45ed038cff64e59de6b718-982",
+        "_date_created ": "2014-09-22T16:04:01.501Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "name",
+                "@property_context": {
+                    "@id": "openi/name",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "email",
+                "@property_context": {
+                    "@id": "openi/email",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/account",
+        "@id": "t_0e09a80a6411bb7203e1d4e3bd1fc85f-321",
+        "@location": "https://193.1.188.34/api/v1/types/t_0e09a80a6411bb7203e1d4e3bd1fc85f-321",
+        "_date_created": "2014-09-15T10:13:59.184Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "Time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/Time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "File",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/File",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "tags",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/tags",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "text",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/text",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Video_post",
+        "@id": "t_166ebd6bc00a0624c821809e86add6e9-1209",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_166ebd6bc00a0624c821809e86add6e9-1209",
+        "_date_created ": "2014-09-22T16:04:01.517Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "distance",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/distance",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "text",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/text",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "metric",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/metric",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "equipment",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/equipment",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "Location",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/Location",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "previous_id",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/previous_id",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "next_id",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/next_id",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Workout_put",
+        "@id": "t_17c17df5fc934fed6677cf79c083f7ae-1593",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_17c17df5fc934fed6677cf79c083f7ae-1593",
+        "_date_created ": "2014-09-22T16:04:01.562Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "profile",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/profile",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "currency",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/currency",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "amount",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/amount",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "code",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/code",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "price",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/price",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Product_post",
+        "@id": "t_1886fb5e0b68175e6e4d3714ed4eebb3-1223",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_1886fb5e0b68175e6e4d3714ed4eebb3-1223",
+        "_date_created ": "2014-09-22T16:04:01.357Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "from",
+                "@property_context": {
+                    "@id": "openi/from",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "openi/service",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/video",
+        "@id": "t_1bfe62e2d976f046ea6aeacd4e49c49a-315",
+        "@location": "https://193.1.188.34/api/v1/types/t_1bfe62e2d976f046ea6aeacd4e49c49a-315",
+        "_date_created ": "2014-09-16T08:48:01.563Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "currency",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/currency",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "price",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/price",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "old_price",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/old_price",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Service_put",
+        "@id": "t_1eb02b0b0f00eb8931571f33750edbfe-1111",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_1eb02b0b0f00eb8931571f33750edbfe-1111",
+        "_date_created ": "2014-09-22T16:04:01.431Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "Time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/Time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "File",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/File",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "tags",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/tags",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "text",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/text",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Article_put",
+        "@id": "t_221085f213616dec2c9c91693cd165cf-1210",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_221085f213616dec2c9c91693cd165cf-1210",
+        "_date_created ": "2014-09-22T16:04:01.012Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "from",
+                "@property_context": {
+                    "@id": "openi/from",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/video",
+        "@id": "t_23a3b1e5f94fa4075703c44c57d7b6d2-219",
+        "@location": "https://193.1.188.34/api/v1/types/t_23a3b1e5f94fa4075703c44c57d7b6d2-219",
+        "_date_created": "2014-09-15T10:13:59.183Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "username",
+                "@property_context": {
+                    "@id": "openi/username",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "usertype",
+                "@property_context": {
+                    "@id": "openi/usertype",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "password",
+                "@property_context": {
+                    "@id": "openi/password",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "email",
+                "@property_context": {
+                    "@id": "openi/email",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/user",
+        "@id": "t_27787ac112b6ba3c5fb66560c28ad9ba-426",
+        "@location": "https://193.1.188.34/api/v1/types/t_27787ac112b6ba3c5fb66560c28ad9ba-426",
+        "_date_created": "2014-09-15T10:13:59.183Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Contact_post",
+        "@id": "t_2b40b9cc91a1502e7165f1e339035386-648",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_2b40b9cc91a1502e7165f1e339035386-648",
+        "_date_created ": "2014-09-22T16:04:01.102Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Contact_put",
+        "@id": "t_2f0b8656a7849229648ba6391f554c7d-647",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_2f0b8656a7849229648ba6391f554c7d-647",
+        "_date_created ": "2014-09-22T16:04:01.106Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "adtype",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/adtype",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "adnetworks",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/adnetworks",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "adservices",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/adservices",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Application_post",
+        "@id": "t_39b4c99af79fbc369a5367100d10c1db-1013",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_39b4c99af79fbc369a5367100d10c1db-1013",
+        "_date_created ": "2014-09-22T16:04:03.494Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "adtype",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/adtype",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "adnetworks",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/adnetworks",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "adservices",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/adservices",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Application_put",
+        "@id": "t_3d970170b441db5e0decc1d9485ecb6d-1012",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_3d970170b441db5e0decc1d9485ecb6d-1012",
+        "_date_created ": "2014-09-22T16:04:03.501Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "application_box",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_box",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "address_number",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/address_number",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_handset",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_handset",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "current_location_time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/current_location_time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time_created",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time_created",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "address_apartment",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/address_apartment",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_wireless_channel_quality",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_wireless_channel_quality",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time_deleted",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time_deleted",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "current_location_longitude",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/current_location_longitude",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_interests",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_interests",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_carrier",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_carrier",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_running_applications",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_running_applications",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_opt_out",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_opt_out",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_postal_code",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_postal_code",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "application_text_copy",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_text_copy",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "current_location_latitude",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/current_location_latitude",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "objectid",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/objectid",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration_time_ended",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration_time_ended",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "address_country",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/address_country",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_ethnicity",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_ethnicity",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "location_longitude",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/location_longitude",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "location_height",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/location_height",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_device_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_device_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_user_ids",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_user_ids",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_town",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_town",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "application_font",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_font",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "application_color",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_color",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_roaming",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_roaming",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_household_size",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_household_size",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "address_street",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/address_street",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_screen_state",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_screen_state",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_customer_tag",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_customer_tag",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "application_background",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_background",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_battery_status",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_battery_status",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_region",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_region",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_country",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_country",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_has_children",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_has_children",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_income",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_income",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "current_location_height",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/current_location_height",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "location_latitude",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/location_latitude",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_wireless_network_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_wireless_network_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_accelerometers",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_accelerometers",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time_edited",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time_edited",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_application_id",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_application_id",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "address_city",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/address_city",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_age_range",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_age_range",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_users_language",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_users_language",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_gender",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_gender",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "application_format",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_format",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_installed_applications",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_installed_applications",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "application_text",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_text",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_device_id",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_device_id",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "address_zip",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/address_zip",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_education",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_education",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_cell_log",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_cell_log",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "application_background_color",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_background_color",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "application_classification",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/application_classification",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "address_locality",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/address_locality",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_sms_log",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_sms_log",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "personalization_device_os",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/personalization_device_os",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "rating_value",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/rating_value",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "device_call_log",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/device_call_log",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration_time_started",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration_time_started",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "mood_value",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/mood_value",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Context_put",
+        "@id": "t_3e9d3f2cf25c013572c955e18c2fc521-9306",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_3e9d3f2cf25c013572c955e18c2fc521-9306",
+        "_date_created ": "2014-09-22T16:04:01.183Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "picture",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/picture",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "description",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/description",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "title",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/title",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "place",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/place",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Event_put",
+        "@id": "t_40f68e1bff56722bdc2979a0e28ca239-1232",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_40f68e1bff56722bdc2979a0e28ca239-1232",
+        "_date_created ": "2014-09-22T16:04:01.219Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "picture",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/picture",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "description",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/description",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "title",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/title",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Badge_post",
+        "@id": "t_41ec83943cce68940203efc943ffda38-1112",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_41ec83943cce68940203efc943ffda38-1112",
+        "_date_created ": "2014-09-22T16:04:01.052Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "profile",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/profile",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Device_put",
+        "@id": "t_45f2fd0f7d41461c19955cb00dc89d53-763",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_45f2fd0f7d41461c19955cb00dc89d53-763",
+        "_date_created ": "2014-09-22T16:04:01.200Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "description",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/description",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "question",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/question",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "options",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/options",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Question_post",
+        "@id": "t_4718b1e64c002c47b5b01b27673b2797-1121",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_4718b1e64c002c47b5b01b27673b2797-1121",
+        "_date_created ": "2014-09-22T16:04:01.375Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "secret",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/secret",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "client_id",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/client_id",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "name",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/name",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "key",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/key",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "provider",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/provider",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Socialapp_put",
+        "@id": "t_49d9e486af573303337076e68493bdb5-645",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_49d9e486af573303337076e68493bdb5-645",
+        "_date_created ": "2014-09-22T16:04:01.072Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "Time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/Time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "File",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/File",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "tags",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/tags",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "text",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/text",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/File_put",
+        "@id": "t_50b1a69eb1bd8af418852898303ea2e3-1207",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_50b1a69eb1bd8af418852898303ea2e3-1207",
+        "_date_created ": "2014-09-22T16:04:01.240Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "weight",
+                "@property_context": {
+                    "@id": "openi/weight",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "height",
+                "@property_context": {
+                    "@id": "openi/height",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/health",
+        "@id": "t_530c8fed80b76fb3072993d91015f309-230",
+        "@location": "https://193.1.188.34/api/v1/types/t_530c8fed80b76fb3072993d91015f309-230",
+        "_date_created": "2014-09-15T10:13:59.184Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "description",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/description",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "question",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/question",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "options",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/options",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Question_put",
+        "@id": "t_54cbf5b737b66b2031efacacc460917e-1120",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_54cbf5b737b66b2031efacacc460917e-1120",
+        "_date_created ": "2014-09-22T16:04:01.389Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "picture",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/picture",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "description",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/description",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "title",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/title",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "place",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/place",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Place_put",
+        "@id": "t_5b37da407df2e51dfeeec5c41565627f-1232",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_5b37da407df2e51dfeeec5c41565627f-1232",
+        "_date_created ": "2014-09-22T16:04:01.351Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "picture",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/picture",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "description",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/description",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "title",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/title",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "place",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/place",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "duration",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/duration",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Route_put",
+        "@id": "t_5db2a9de2c80f3bd1ca66202bcf67119-1232",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_5db2a9de2c80f3bd1ca66202bcf67119-1232",
+        "_date_created ": "2014-09-22T16:04:01.412Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "username",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/username",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "password",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/password",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "wallet",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/wallet",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "Person",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/Person",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "user",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/user",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "Time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/Time",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "active",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/active",
+                    "@openi_type": "boolean"
+                }
+            },
+            {
+                "@property_name": "validated",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/validated",
+                    "@openi_type": "boolean"
+                }
+            },
+            {
+                "@property_name": "email",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/email",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Account_put",
+        "@id": "t_5df1b520720c6d128c06606cf23ae135-1688",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_5df1b520720c6d128c06606cf23ae135-1688",
+        "_date_created ": "2014-09-22T16:04:03.515Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "openi/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "from",
+                "@property_context": {
+                    "@id": "openi/from",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "openi/photo",
+        "@id": "t_601325fb6e6fe6ae23c3cfe70b0b7faa-219",
+        "@location": "https://193.1.188.34/api/v1/types/t_601325fb6e6fe6ae23c3cfe70b0b7faa-219",
+        "_date_created": "2014-09-15T10:13:59.183Z"
+    },
+    {
+        "@context": [
+            {
+                "@property_name": "profile",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/profile",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "From",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/From",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "service",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/service",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "tags",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/tags",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "url",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/url",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "object_type",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/object_type",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "height",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/height",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "width",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/width",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "location",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/location",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "context",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/context",
+                    "@openi_type": "string"
+                }
+            },
+            {
+                "@property_name": "time",
+                "@property_context": {
+                    "@id": "https://demo1.openi-ict.eu/time",
+                    "@openi_type": "string"
+                }
+            }
+        ],
+        "@reference": "https://demo1.openi-ict.eu/Photo_post",
+        "@id": "t_6249f0d424409553293e5474d8f74534-1332",
+        "@location": "https://dev.openi-ict.eu/api/v1/types/t_6249f0d424409553293e5474d8f74534-1332",
+        "_date_created ": "2014-09-22T16:04:01.315Z"
+    }
+]
