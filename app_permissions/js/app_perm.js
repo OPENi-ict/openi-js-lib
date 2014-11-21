@@ -2,6 +2,18 @@
  * Created by nstasinos on 5/10/2014.
  */
 
+function getURLparam(name) {
+    if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
+        return decodeURIComponent(name[1]);
+}
+
+if (!(getURLparam("clientId") == null)) {
+    var clientId = getURLparam("clientId")
+}
+else {
+    alert("No clientId!")
+}
+
 var typesName = [   "Account",
                     "Application",
                     "Article",
@@ -72,6 +84,8 @@ var typesId = [
                     "Video",
                     "Workout"
 ];
+
+
 
 // .indexOf("arrayElementValue")
 // ({"trg": "app", "type": "type", "id": "t_892173921h12zz1328319", "prm": ["read"], "grnt": "grant"})

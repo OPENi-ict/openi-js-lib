@@ -2,7 +2,7 @@
  * Created by nstasinos on 7/10/2014.
  */
 
-var urlServer = "https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";
+var urlServer = "https://"+window.location.host+"/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";
 
 if (!(getURLparam("clientId") == null)) {
     var clientId = getURLparam("clientId")
@@ -174,7 +174,7 @@ function createUser(username, password, client_id) {
                             var data = JSON.parse(response.data);
                             var token = data.token;
                             localStorage.setItem("token",token);
-                            window.location.replace("../app_permissions/app_perm.html");
+                            window.location.replace("../app_permissions/app_perm.html?clientId="+client_id);
 
                             /*
                             var json = JSON.stringify({

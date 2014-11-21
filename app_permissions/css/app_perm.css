@@ -152,7 +152,7 @@ body {
 	border-right-width:1px;
 	margin-top:15px;
 }
-.f_link01 a:link {
+.f_link01 a {
 	color:#8f8f8f;
 	text-decoration:none;
 }
@@ -175,7 +175,7 @@ body {
 	text-decoration:none;
 	margin-top:15px;
 }
-.f_link02 a:link {
+.f_link02 a {
     color: #428bca;
 	text-decoration:none;
 }
