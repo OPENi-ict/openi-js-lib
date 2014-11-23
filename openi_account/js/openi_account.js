@@ -28,8 +28,8 @@ else {
 }*/
 
 // Swagger JS
-loadScript("https://demo2.openi-ict.eu/api-docs/lib/shred.bundle.js", function () {
-    loadScript("https://demo2.openi-ict.eu/api-docs/lib/swagger.js", function () {
+loadScript("https://"+window.location.host+"/api-docs/lib/shred.bundle.js", function () {
+    loadScript("https://"+window.location.host+"/api-docs/lib/swagger.js", function () {
         initSwagger(function () {
             $(" #btn-signup").click(function () {
                 if (!(getURLparam("clientId") == null)) {

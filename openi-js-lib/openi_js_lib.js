@@ -2,9 +2,9 @@
  * Created by nstasinos on 18/11/2014.
  */
 
-var urlServer = "https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";    //default
+var urlServer = "";//"https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";    //default
 var openi_token = null;
-var global_openi_domain = "demo2.openi-ict.eu"; //default
+var global_openi_domain = "";//"demo2.openi-ict.eu"; //default
 var openiUserPermPath = "/openi-js-auth/permissions/settings.html";
 var openiUserAuthPath = "/openi-js-auth/openi_account/openi_account.html";
 
@@ -312,13 +312,13 @@ function searchObjects(type, with_property, property_filter, id_only, token, suc
 }
 
 function initOPENi(openi_domain, success, error){
-    loadScript("https://demo2.openi-ict.eu/api-docs/lib/shred.bundle.js", function () {
-        loadScript("https://demo2.openi-ict.eu/api-docs/lib/swagger.js", function () {
+    if(openi_domain != null || openi_domain != undefined) {
+        urlServer = "https://" + openi_domain + "/api-spec/v1";
+        global_openi_domain = openi_domain
+    }
+    loadScript("https://"+global_openi_domain+"/api-docs/lib/shred.bundle.js", function () {
+        loadScript("https://"+global_openi_domain+"/api-docs/lib/swagger.js", function () {
             //function initSwagger(success) {
-            if(openi_domain != null || openi_domain != undefined) {
-                urlServer = "https://" + openi_domain + "/api-spec/v1";
-                global_openi_domain = openi_domain
-            }
             window.swagger = new SwaggerApi({
                 url: urlServer,
                 success: function() {
