@@ -20,13 +20,13 @@ initSwagger(function () {
         function (data) {
             console.log(data);
             //countElement++;
-            if (data.length == 0) {
+            if (data.result.length == 0) {
                 settings_profile[0][1].css("display", "none");
             }
             else{
                 //fill data
 
-                var data = JSON.parse(JSON.stringify(data).replace(/@data/g,"data"));
+                var data = data.result['@data'];
                 var countFb=0;
                 var countTwit=0;
                 var countPin=0;

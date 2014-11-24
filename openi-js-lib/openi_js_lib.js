@@ -5,7 +5,7 @@
 var urlServer = "";//"https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";    //default
 var openi_token = null;
 var global_openi_domain = "";//"demo2.openi-ict.eu"; //default
-var openiUserPermPath = "/openi-js-auth/permissions/settings.html";
+var openiUserPermPath = "/openi-js-auth/user_permissions/openi_settings.html";
 var openiUserAuthPath = "/openi-js-auth/openi_account/openi_account.html";
 
 //==============================
@@ -72,7 +72,7 @@ function checkLoginStatus(loggedIn, notLoggedIn){
 // temp
 // TODO check if logged in
 function redirectToOPENiUserPermissions(clientId){
-    location.replace("http://" + global_openi_domain + openiUserPermPath + "?clientId=" + clientId + "&redirectURI=" + redirectURI + "&OUST=" + localStorage.OUST)
+    location.replace("http://" + global_openi_domain + openiUserPermPath + "?clientId=" + clientId + "&OUST=" + localStorage.OUST)
 }
 
 function redirectToOPENiUserAuth(clientId, redirectURI){
@@ -148,7 +148,7 @@ function loginUser(username, password, clientId, success, error) {
 
 }
 
-function loginWithSessionTokenURL(success, error){
+function loginWithSessionTokenURL(success, lerror){
     var session = getURLparam("OUST");
     var clientId = getURLparam("clientId");
     localStorage.setItem("OUST", session);
@@ -166,7 +166,7 @@ function loginWithSessionTokenURL(success, error){
         localStorage.setItem("OUAT", token);
         success(token);
     }, function (ferror) {
-        error(ferror);
+        lerror(ferror);
     })
 }
 
@@ -341,7 +341,7 @@ function initOPENi(openi_domain, success, error){
                 },
                 failure: function() {
                     console.log("Failure initiating swaggerApi");
-                    alert("Failure initiating swaggerApi");
+                    //alert("Failure initiating swaggerApi");
                     error("Failure initiating swaggerApi")
                 }
             });

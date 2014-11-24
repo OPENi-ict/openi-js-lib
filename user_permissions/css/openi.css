@@ -31,7 +31,7 @@ body {
 
 .acc {
 	width:100%;
-	background-image:url('images/acc_tile.png');
+	background-image:url('../images/acc_tile.png');
 	background-repeat:repeat-x;
 	margin-top:10px;
 	text-align:left;
@@ -95,7 +95,7 @@ body {
 
 .acc_b {
 	width:100%;
-	background-image:url('images/acc_tile_b.png');
+	background-image:url('../images/acc_tile_b.png');
 	background-repeat:repeat-x;
 	text-align:left;
 	height:60px;
@@ -276,7 +276,7 @@ body {
 
 .rv_icon {
 	width:98%;
-	background-image:url('images/line.png');
+	background-image:url('../images/line.png');
 	background-repeat:repeat-x;
 	background-position:center;
 	margin-right:2%;
@@ -371,7 +371,7 @@ body {
 }
 /***********************  general  ***********************/
 .line_break {
-	background-image:url('images/line_break.png');
+	background-image:url('../images/line_break.png');
 	background-repeat:repeat-x;
 	height:20px;
 }
@@ -413,7 +413,7 @@ input[type=checkbox].css-checkbox {
 				-moz-user-select: none;
 				-ms-user-select: none;
 				user-select: none;
-				background-image:url('images/checkbox.png');
+				background-image:url('../images/checkbox.png');
 			}
 
 
