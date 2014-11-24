@@ -70,7 +70,7 @@ function initSwagger(success) {
         },
         failure: function () {
             console.log("Failure initiating swaggerApi");
-            alert("Failure initiating swaggerApi");
+            //alert("Failure initiating swaggerApi");
         }
     });
 }
