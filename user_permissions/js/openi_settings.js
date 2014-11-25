@@ -36,9 +36,16 @@ settings_profile = [
 
 var countElement = -1;
 
-$("#perm_done").click(function(){
-    location.replace(getURLparam("redirectURI"))
-});
+if (localStorage.redirectURI != undefined){
+    $("#perm_done").click(function(){
+        location.replace(localStorage.redirectURI)
+    });
+} else if (getURLparam("redirectURI") != null) {
+    localStorage.setItem("redirectURI",getURLparam("redirectURI"));
+    $("#perm_done").click(function(){
+        location.replace(getURLparam("redirectURI"))
+    });
+}
 
 initSwagger(function () {
 
