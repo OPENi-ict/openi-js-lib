@@ -21,12 +21,12 @@ initSwagger(function () {
             }
             else{
                 //fill data
-                var data = data[0]['@data'];
-                $(" #openi_username").text(data.result.username);
-                $(" #openi_firstname").text(data.result.first_name);
-                $(" #openi_lastname").text(data.result.last_name);
-                $(" #openi_email").text(data.result.email);
-                $(" #openi_password").text(data.result.password);
+                var data = data.result[0]['@data'];
+                $(" #openi_username").text(data.username);
+                $(" #openi_firstname").text(data.first_name);
+                $(" #openi_lastname").text(data.last_name);
+                $(" #openi_email").text(data.email);
+                $(" #openi_password").text(data.password);
             }
         },
         function () {
@@ -34,7 +34,7 @@ initSwagger(function () {
         }
     );
 
-    searchCloudletObjects(perm_cloudletID, settings_profile[1][0], "", "service=facebook", "",
+    searchCloudletObjects(perm_cloudletID, settings_profile[1][0], "", "provider=facebook", "",
         function (data) {
             console.log(data);
             //countElement++;
@@ -50,7 +50,7 @@ initSwagger(function () {
         }
     );
 
-    searchCloudletObjects(perm_cloudletID, settings_profile[1][0], "", "service=pintrest", "",
+    searchCloudletObjects(perm_cloudletID, settings_profile[1][0], "", "provider=pintrest", "",
         function (data) {
             console.log(data);
             //countElement++;
@@ -66,7 +66,7 @@ initSwagger(function () {
         }
     );
 
-    searchCloudletObjects(perm_cloudletID, settings_profile[1][0], "", "service=twitter", "",
+    searchCloudletObjects(perm_cloudletID, settings_profile[1][0], "", "provider=twitter", "",
         function (data) {
             console.log(data);
             //countElement++;

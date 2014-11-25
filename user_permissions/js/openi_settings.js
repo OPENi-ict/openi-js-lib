@@ -17,16 +17,16 @@
 
 settings_profile = [
     ["t_04ce46c08270f979662e61955c2ec22f-1650", $("#profile")],
-    ["wallet", $("#wallet")],
-    ["t_7ea9e1db966accdd139222c9d33202bc-804", $("#device")],
+    ["t_fd647de3a0299b8aa11963a970857091-513", $("#wallet")],
+    ["t_62972a935f36a48aa910142a419d68db-10776", $("#device")], //context
     ["contact", $("#contact")],
-    ["t_23a3b1e5f94fa4075703c44c57d7b6d2-219", $("#media")],
-    ["t_23a3b1e5f94fa4075703c44c57d7b6d2-219", $("#media")],
+    ["t_cfd6002df6517180ec479ee9c80a093c-640", $("#media")], // photo
+    ["t_394e16bd3ef40a6e114a1ea8bd2a2f57-362", $("#media")], // videos
     ["webcam", $("#webcam")],
-    ["t_0e09a80a6411bb7203e1d4e3bd1fc85f-321", $("#social")],
-    ["product", $("#product")],
-    ["t_30f13a9ed5288a2d7960ede0a9157e28-981", $("#health")],
-    ["location", $("#location")]
+    ["t_70d949d8bcdb410aacf4c453b87c6b14-813", $("#social")], // socialaccount
+    ["t_030022c5b33c4159ccaeeba1861a00f0-784", $("#product")],
+    ["t_5b3ca8c1463a7d17b11fd69181a1e886-807", $("#health")], // measurement
+    ["t_23dabdd642497b312de48a5c7a36b4e2-362", $("#location")]
 ];
 
 var countElement = -1;

@@ -7,9 +7,9 @@
  */
 
 settings_profile = [
-    ["t_026570539e1f4911ec39655d663b7f8e-315", $("#openi_images")],
-    ["t_89f9002d71ede3f359aad4d275af9c4c-315", $("#openi_audios")],
-    ["t_1bfe62e2d976f046ea6aeacd4e49c49a-315", $("#openi_videos")]
+    ["t_cfd6002df6517180ec479ee9c80a093c-640", $("#openi_images")],
+    ["t_4fcb843ee85b823d68efb86ff460076e-362", $("#openi_audios")],
+    ["t_394e16bd3ef40a6e114a1ea8bd2a2f57-362", $("#openi_videos")]
 ];
 
 
@@ -55,7 +55,6 @@ initSwagger(function () {
                     $("#openi_img_twitter").css("display", "none");
                 }
 
-
                 /*$(" #openi_username").text(data.data.username);
                 $(" #openi_usertype").text(data.data.usertype);
                 $(" #openi_email").text(data.data.email);
@@ -71,7 +70,7 @@ initSwagger(function () {
         function (data) {
             console.log(data);
             //countElement++;
-            if (data.length == 0) {
+            if (data.result.length == 0) {
                 settings_profile[1][1].css("display", "none");
             }
             else{
@@ -87,7 +86,7 @@ initSwagger(function () {
         function (data) {
             console.log(data);
             //countElement++;
-            if (data.length == 0) {
+            if (data.result.length == 0) {
                 settings_profile[2][1].css("display", "none");
             }
             else{
