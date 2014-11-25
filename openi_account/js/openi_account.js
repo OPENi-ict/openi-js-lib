@@ -197,16 +197,19 @@ function createUser(username, password, client_id) {
                             })
                             */
                         }, function (error) {
+                            alert("Something went wrong with login-register!!!\n :( ")
                             console.log(error)
                         })
                     }
                 }, function (error) {
+                    alert("Something went wrong with login-register!!!\n :( ")
                     console.log(error)
                 });
 
             }
         }, function (error) {
-            console.log(error);
+            alert("Something went wrong with register!!!\n :( ")
+            console.log(error)
         });
     } else {
         console.log("json is invalid");
@@ -280,11 +283,13 @@ function loginUser(username, password) {
                     console.log(error)
                 })*/
             }, function (error) {
-
+                alert("Something went wrong with login!!! \n :( ")
+                console.log(error)
             })
         }
     }, function (error) {
-
+        alert("Something went wrong with login!!! \n :( ")
+        console.log(error)
     });
 
 }

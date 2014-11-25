@@ -2,9 +2,10 @@
  * Created by nstasinos on 29/8/2014.
  */
 
-var urlServer = "https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";
+var urlServer = "https://"+window.location.host+"/api-spec/v1";
 // http://openi-qa.velti.com:8888/api-spec/v1/cloudlet
 var perm_cloudletID = localStorage.cid;
+var openiUserAuthPath = "/openi-js-auth/openi_account/openi_account.html";
 
 // should get it from the authentication procedure
 if (!(getURLparam("OUST") == null) && localStorage.OUST == null){
@@ -18,7 +19,7 @@ else {
     alert("No Session Key!\nSorry! Try again!")
 }
 
-function getCloudletIdFromSessionsKey(success, error){
+function getCloudletIdFromSessionsKey(success, ccerror){
     var session = getURLparam("OUST");
     var clientId = getURLparam("clientId");
     localStorage.setItem("OUST", session);
@@ -40,17 +41,29 @@ function getCloudletIdFromSessionsKey(success, error){
         };
 
         swagger.apis.cloudlets.getCloudletId(args, function(data){
-
             perm_cloudletID = JSON.parse(data.data).id;
             localStorage.setItem("cid", perm_cloudletID);
             success()
         }, function(error){
+            alert("Couldn't get cloudlet ID")
             console.log(error);
-        })
+        });
 
     }, function (ferror) {
-        error(ferror)
-    })
+        ccerror(ferror)
+    });
+}
+
+function checkLoginStatus(loggedIn, notLoggedIn){
+    if (localStorage.OUAT == undefined || localStorage.OUAT == null){
+        // redirect user to login?
+        console.log("User not authenticated!!!");
+        notLoggedIn();
+    }
+    else {
+        var openi_token = localStorage.OUAT;
+        loggedIn(openi_token);
+    }
 }
 
 function initSwagger(success) {
@@ -59,13 +72,22 @@ function initSwagger(success) {
         success: function () {
             if (swagger.ready === true) {
                 console.log("swagger is ready");
+
                 if ((localStorage.OUST == undefined || localStorage.cid == undefined) && getURLparam("OUST") != null && getURLparam("clientId") != null)
                     getCloudletIdFromSessionsKey(function(){
                         success();
                     });
-                else
+                else {
                     //alert("No client id and session key in url");
-                    success();
+                    checkLoginStatus(function loggedIn(){
+                        success();
+                    }, function notLoggedIn(){
+                        alert("Not Logged In!!!")
+                        location.replace("http://" + window.location.host + openiUserAuthPath + "?clientId=" + getURLparam("clientId") + "&redirectURI=" + window.location.href)
+
+                    });
+
+                }
 
                 // Check if cloudlet was created in the past
                 // todo check this

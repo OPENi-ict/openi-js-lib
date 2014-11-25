@@ -14,6 +14,10 @@
 // video
 // http://193.1.188.34/api/v1/types/t_23a3b1e5f94fa4075703c44c57d7b6d2-219
 
+function getURLparam(name){
+    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+        return decodeURIComponent(name[1]);
+}
 
 settings_profile = [
     ["t_04ce46c08270f979662e61955c2ec22f-1650", $("#profile")],
@@ -22,6 +26,7 @@ settings_profile = [
     ["contact", $("#contact")],
     ["t_cfd6002df6517180ec479ee9c80a093c-640", $("#media")], // photo
     ["t_394e16bd3ef40a6e114a1ea8bd2a2f57-362", $("#media")], // videos
+    ["t_4fcb843ee85b823d68efb86ff460076e-362", $("#media")], // audios
     ["webcam", $("#webcam")],
     ["t_70d949d8bcdb410aacf4c453b87c6b14-813", $("#social")], // socialaccount
     ["t_030022c5b33c4159ccaeeba1861a00f0-784", $("#product")],
@@ -30,6 +35,10 @@ settings_profile = [
 ];
 
 var countElement = -1;
+
+$("#perm_done").click(function(){
+    location.replace(getURLparam("redirectURI"))
+});
 
 initSwagger(function () {
 
@@ -133,7 +142,18 @@ initSwagger(function () {
                         console.log(data);
                         //countElement++;
                         if (data.result.length == 0){
-                            settings_profile[5][1].css("display","none");
+                            searchCloudletObjects(perm_cloudletID, settings_profile[6][0], "", "", "true",
+                                function (data) {
+                                    console.log(data);
+                                    //countElement++;
+                                    if (data.result.length == 0){
+                                        settings_profile[6][1].css("display","none");
+                                    }
+                                },
+                                function () {
+                                    console.log("error")
+                                }
+                            );
                         }
                     },
                     function () {
@@ -143,19 +163,6 @@ initSwagger(function () {
             }
 
 
-        },
-        function () {
-            console.log("error")
-        }
-    );
-
-    searchCloudletObjects(perm_cloudletID, settings_profile[6][0], "", "", "true",
-        function (data) {
-            console.log(data);
-            //countElement++;
-            if (data.result.length == 0){
-                settings_profile[6][1].css("display","none");
-            }
         },
         function () {
             console.log("error")
@@ -207,6 +214,19 @@ initSwagger(function () {
             //countElement++;
             if (data.result.length == 0){
                 settings_profile[10][1].css("display","none");
+            }
+        },
+        function () {
+            console.log("error")
+        }
+    );
+
+    searchCloudletObjects(perm_cloudletID, settings_profile[11][0], "", "", "true",
+        function (data) {
+            console.log(data);
+            //countElement++;
+            if (data.result.length == 0){
+                settings_profile[11][1].css("display","none");
             }
         },
         function () {
