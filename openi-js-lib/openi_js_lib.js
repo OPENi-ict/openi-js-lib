@@ -71,8 +71,8 @@ function checkLoginStatus(loggedIn, notLoggedIn){
 
 // temp
 // TODO check if logged in
-function redirectToOPENiUserPermissions(clientId){
-    location.replace("http://" + global_openi_domain + openiUserPermPath + "?clientId=" + clientId + "&OUST=" + localStorage.OUST)
+function redirectToOPENiUserPermissions(clientId, redirectURI){
+    location.replace("http://" + global_openi_domain + openiUserPermPath + "?clientId=" + clientId + "&OUST=" + localStorage.OUST + "&redirectURI=" + redirectURI)
 }
 
 function redirectToOPENiUserAuth(clientId, redirectURI){

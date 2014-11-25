@@ -116,8 +116,16 @@ addTokenHeader(token)
 
 ## OPENi web Authorization/Authentication (tutorial and lib)
 
-This section allows you to enable OPENi Registration/Log-in/Permissions diolog. 
+This section allows you to enable OPENi Registration/Log-in/Permissions dialogue.
+
+````
+redirectToOPENiUserAuth(clientId, redirectURI)
+````
 
 ## OPENi web Permission Visualization (tutorial and lib) 
 
 This section allows you to enable OPENi Permission Visualization template.
+
+````
+redirectToOPENiUserPermissions(clientId, redirectURI)
+````
