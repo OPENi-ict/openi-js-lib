@@ -118,6 +118,7 @@ addTokenHeader(token)
 
 This section allows you to enable OPENi Registration/Log-in/Permissions dialogue.
 
+Using openi_js_lib.js library you can redirect the user to the OPENi user Authorization/Authentication page
 ````
 redirectToOPENiUserAuth(clientId, redirectURI)
 ````
@@ -126,6 +127,7 @@ redirectToOPENiUserAuth(clientId, redirectURI)
 
 This section allows you to enable OPENi Permission Visualization template.
 
+Using openi_js_lib.js library you can redirect the user to the OPENi user permissions page
 ````
 redirectToOPENiUserPermissions(clientId, redirectURI)
 ````
