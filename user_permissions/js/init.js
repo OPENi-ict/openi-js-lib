@@ -41,7 +41,7 @@ function getCloudletIdFromSessionsKey(success, ccerror){
         };
 
         swagger.apis.cloudlets.getCloudletId(args, function(data){
-            perm_cloudletID = JSON.parse(data.data).id;
+            perm_cloudletID = JSON.parse(data.data)["@id"];
             localStorage.setItem("cid", perm_cloudletID);
             success()
         }, function(error){
