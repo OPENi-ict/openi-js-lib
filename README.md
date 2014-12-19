@@ -131,3 +131,5 @@ Using openi_js_lib.js library you can redirect the user to the OPENi user permis
 ````
 redirectToOPENiUserPermissions(clientId, redirectURI)
 ````
+
+**Demo app URL: https://demo2.openi-ict.eu/openi-js-auth/demo-js/**
