@@ -7,11 +7,12 @@ function getURLparam(name) {
         return decodeURIComponent(name[1]);
 }
 
-if (!(getURLparam("clientId") == null)) {
-    var clientId = getURLparam("clientId")
+if (!(getURLparam("jwt") == null)) {
+    var jwt = getURLparam("jwt")
+    setCookie("jwt",jwt,1)
 }
 else {
-    alert("No clientId!")
+    alert("No jwt!")
 }
 
 var typesName = [   "Account",
@@ -110,8 +111,26 @@ testAppPermJson.forEach(function(obj){
 });
 
 $(" #accept_permapp").click(function(){
-    window.location.replace(localStorage.redirectURI + "?OUST=" + localStorage.session + "&clientId=" + clientId);
+    window.location.replace(getCookie("redirectURI") + "?OUST=" + getCookie("jwt") );
 });
 // insert iframe for permissions in app
 
 //$("#some_div").append('"<iframe src="app_perm.html" style="margin: auto;display: block;width: 50%;height: 100%;margin-top: 10%;margin-bottom: 10%;overflow: visible;border: none;></iframe>"');
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}

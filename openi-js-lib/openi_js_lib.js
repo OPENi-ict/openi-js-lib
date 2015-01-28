@@ -5,48 +5,8 @@
 var urlServer = "";//"https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";    //default
 var openi_token = null;
 var global_openi_domain = "";//"demo2.openi-ict.eu"; //default
-var openiUserPermPath = "/openi-js-auth/user_permissions/openi_settings.html";
-var openiUserAuthPath = "/openi-js-auth/openi_account/openi_account.html";
-
-//==============================
-//          js utils
-//==============================
-function loadScript(url, callback) {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    if (script.readyState) {
-        // IE
-        script.onreadystatechange = function () {
-            if (script.readyState == "loaded" || script.readyState == "complete") {
-                script.onreadystatechange = null;
-                callback();
-            }
-        };
-    } else {
-        // Others
-        script.onload = function () {
-            callback();
-        };
-    }
-    script.src = url;
-    document.getElementsByTagName("head")[0].appendChild(script);
-}
-
-function getURLparam(name){
-    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
-        return decodeURIComponent(name[1]);
-}
-
-function isValidJSON(str){
-    try{
-        JSON.parse(str);
-        return true;
-    }
-    catch(e) {
-        return false
-    }
-}
-//===============================================
+var openiUserPermPath = "/auth/user_permissions/openi_settings.html";
+var openiUserAuthPath = "/auth/openi_account/openi_account.html";
 
 
 //===============================================
@@ -110,27 +70,17 @@ function createUser(username, password, success, error) {
     }
 }
 
-function loginUser(username, password, clientId, success, error) {
+function loginUser(username, password, api_key, secret, success, error) {
     console.log("logging in user");
     var json = JSON.stringify({
         "name": username,
-        "password": password
+        "password": password,
+        "api_key": api_key,
+        "secret": secret
     });
 
-    swagger.apis.simple_auth.login({
+    swagger.apis.simple_auth.getAuthToken({
         body: json
-    }, function (response) {
-        console.log(response);
-        if (response.status == 200) {
-            var data = JSON.parse(response.data);
-            var session = data.session;
-            localStorage.setItem("OUST", session);
-            var json = JSON.stringify({
-                "session": session,
-                "client_id": clientId
-            });
-            swagger.apis.simple_auth.authorizeClient({
-                body: json
             }, function (response) {
                 console.log(response);
                 var data = JSON.parse(response.data);
@@ -140,15 +90,10 @@ function loginUser(username, password, clientId, success, error) {
                 success(token);
             }, function (ferror) {
                 error(ferror);
-            })
-        }
-    }, function (ferror) {
-        error(ferror);
-    });
-
+            });
 }
 
-function loginWithSessionTokenURL(success, lerror){
+/*function loginWithSessionTokenURL(success, lerror){
     var session = getURLparam("OUST");
     var clientId = getURLparam("clientId");
     localStorage.setItem("OUST", session);
@@ -168,7 +113,7 @@ function loginWithSessionTokenURL(success, lerror){
     }, function (ferror) {
         lerror(ferror);
     })
-}
+}*/
 
 function getObjectWithID(cloudletId, objectId, token, success, error){
     var args = {
@@ -348,3 +293,43 @@ function initOPENi(openi_domain, success, error){
         });
     });
 }
+
+//==============================
+//          js utils
+//==============================
+function loadScript(url, callback) {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    if (script.readyState) {
+        // IE
+        script.onreadystatechange = function () {
+            if (script.readyState == "loaded" || script.readyState == "complete") {
+                script.onreadystatechange = null;
+                callback();
+            }
+        };
+    } else {
+        // Others
+        script.onload = function () {
+            callback();
+        };
+    }
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+function getURLparam(name){
+    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+        return decodeURIComponent(name[1]);
+}
+
+function isValidJSON(str){
+    try{
+        JSON.parse(str);
+        return true;
+    }
+    catch(e) {
+        return false
+    }
+}
+//===============================================

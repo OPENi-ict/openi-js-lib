@@ -4,27 +4,34 @@
 
 var urlServer = "https://"+window.location.host+"/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";
 
-if (!(getURLparam("clientId") == null)) {
-    var clientId = getURLparam("clientId")
+if (!(getURLparam("api_key") == null)) {
+    var api_key = getURLparam("api_key")
 }
 else {
-    alert("No clientId!")
+    custAlert("No api_key!")
+}
+
+if (!(getURLparam("secret") == null)) {
+    var secret = getURLparam("secret")
+}
+else {
+    custAlert("No secret key!")
 }
 
 if (!(getURLparam("redirectURI") == null)) {
     var redirectURI = getURLparam("redirectURI");
-    localStorage.setItem("redirectURI", redirectURI);
+    setCookie("redirectURI", redirectURI,1);
 }
 else {
-    alert("No redirectURI!")
+    custAlert("No redirectURI!")
 }
 
 /*if (!(getURLparam("redirectDomain") == null)) {
     var redirectDomain = getURLparam("redirectDomain");
-    localStorage.setItem("redirectDomain", redirectDomain);
+    setCookie("redirectDomain", redirectDomain, 1);
 }
 else {
-    alert("No redirectDomain!")
+    custAlert("No redirectDomain!")
 }*/
 
 // Swagger JS
@@ -32,25 +39,25 @@ loadScript("https://"+window.location.host+"/api-docs/lib/shred.bundle.js", func
     loadScript("https://"+window.location.host+"/api-docs/lib/swagger.js", function () {
         initSwagger(function () {
             $(" #btn-signup").click(function () {
-                if (!(getURLparam("clientId") == null)) {
+                if (!(getURLparam("api_key") == null)) {
                     if ($("#accept-openi").is(':checked')) {
                         onClickRegisterButton()
                     }
                     else {
-                        alert("Please allow OPENi to create your Cloudlet")
+                        custAlert("Please allow OPENi to create your Cloudlet")
                     }
                 }
                 else {
-                    alert("No clientId!")
+                    custAlert("No api_key!")
                 }
 
             });
             $(" #btn-login").click(function(){
-                if (!(getURLparam("clientId") == null)) {
+                if (!(getURLparam("api_key") == null)) {
                         onClickLogInButton()
                 }
                 else {
-                    alert("No clientId!")
+                    custAlert("No api_key!")
                 }
             })
         })
@@ -70,7 +77,7 @@ function initSwagger(success) {
         },
         failure: function () {
             console.log("Failure initiating swaggerApi");
-            //alert("Failure initiating swaggerApi");
+            //custAlert("Failure initiating swaggerApi");
         }
     });
 }
@@ -84,20 +91,20 @@ function onClickRegisterButton() {
     var confirmPassword = $(" #_openi_conf_passwd").val();
     var validated = true;
     if (username === "") {
-        alert("User name is required");
+        custAlert("User name is required");
         validated = false;
     } else {
         if (password === "") {
-            alert("Password is required");
+            custAlert("Password is required");
             validated = false;
         } else {
             if (confirmPassword === "") {
-                alert("Confirmation password is required");
+                custAlert("Confirmation password is required");
                 validated = false;
             } else {
                 if (confirmPassword != "" && password != "") {
                     if (confirmPassword != password) {
-                        alert("Passwords are not the same");
+                        custAlert("Passwords are not the same");
                         validated = false;
                     }
                 }
@@ -105,7 +112,7 @@ function onClickRegisterButton() {
         }
     }
     if (validated) {
-        createUser(username, password, clientId);
+        createUser(username, password, api_key);
     }
 }
 
@@ -118,11 +125,11 @@ function onClickLogInButton() {
     //var confirmPassword = confirmPasswordField.getValue();
     var validated = true;
     if (username === " ") {
-        alert("User name is required");
+        custAlert("User name is required");
         validated = false;
     } else {
         if (password === " ") {
-            alert("Password is required");
+            custAlert("Password is required");
             validated = false;
         }
     }
@@ -138,7 +145,7 @@ function createUser(username, password, client_id) {
 
     console.log("Creating cloudlet/user");
     var json = JSON.stringify({
-        "name": username,
+        "username": username,
         "password": password
     });
 
@@ -148,33 +155,24 @@ function createUser(username, password, client_id) {
             body: json
         }, function (response) {
             console.log(response);
-            if (response.status == 200) {
+            if (response.status == 201) {
                 //console.log("Cloudlet created successfully.");
                 var json = JSON.stringify({
-                    "name": username,
-                    "password": password
+                    "username": username,
+                    "password": password,
+                    "api_key": api_key,
+                    "secret": secret
                 });
 
-                swagger.apis.simple_auth.login({
+                swagger.apis.simple_auth.getAuthToken({
                     body: json
                 }, function (response) {
-                    console.log(response);
-                    if (response.status == 200) {
-                        var data = JSON.parse(response.data);
-                        var session = data.session;
-                        localStorage.setItem("session", session);
-                        var json = JSON.stringify({
-                            "session": session,
-                            "client_id": client_id
-                        });
-                        swagger.apis.simple_auth.authorizeClient({
-                            body: json
-                        }, function (response) {
+
                             console.log(response);
                             var data = JSON.parse(response.data);
-                            var token = data.token;
-                            localStorage.setItem("token",token);
-                            window.location.replace("../app_permissions/app_perm.html?clientId="+client_id);
+                            var token = data.session;
+                            setCookie("token",token,1);
+                            window.location.replace("../app_permissions/app_perm.html?jwt="+token);
 
                             /*
                             var json = JSON.stringify({
@@ -197,20 +195,14 @@ function createUser(username, password, client_id) {
                             })
                             */
                         }, function (error) {
-                            alert("Something went wrong with login-register!!!\n :( ")
+                            custAlert("Something went wrong with login!!!\n :( ");
                             console.log(error)
                         })
                     }
                 }, function (error) {
-                    alert("Something went wrong with login-register!!!\n :( ")
+                    custAlert("Something went wrong with register!!!\n :( ");
                     console.log(error)
                 });
-
-            }
-        }, function (error) {
-            alert("Something went wrong with register!!!\n :( ")
-            console.log(error)
-        });
     } else {
         console.log("json is invalid");
     }
@@ -222,32 +214,24 @@ function createUser(username, password, client_id) {
 function loginUser(username, password) {
     console.log("logging in user");
     var json = JSON.stringify({
-        "name": username,
-        "password": password
+        "username": username,
+        "password": password,
+        "api_key": api_key,
+        "secret": secret
     });
 
-    swagger.apis.simple_auth.login({
+    swagger.apis.simple_auth.getAuthToken({
         body: json
     }, function (response) {
         console.log(response);
         if (response.status == 200) {
-            var data = JSON.parse(response.data);
-            var session = data.session;
-            var json = JSON.stringify({
-                "session": session,
-                "client_id": clientId
-            });
-            swagger.apis.simple_auth.authorizeClient({
-                body: json
-            }, function (response) {
                 console.log(response);
                 var data = JSON.parse(response.data);
-                var token = data.token;
-                localStorage.setItem("token",token);
-                window.location.replace(redirectURI + "?OUST=" + session + "&clientId=" + clientId);
+                var token = data.session;
+                setCookie("token",token,1);
+                window.location.replace(redirectURI + "?OUST=" + token );
 
                 // check app perms
-
 
                 /*
                 var json = JSON.stringify({
@@ -282,18 +266,18 @@ function loginUser(username, password) {
                 }, function (error) {
                     console.log(error)
                 })*/
-            }, function (error) {
-                alert("Something went wrong with login!!! \n :( ")
-                console.log(error)
-            })
         }
     }, function (error) {
-        alert("Something went wrong with login!!! \n :( ")
+        custAlert("Something went wrong with login!!! \n :( ");
         console.log(error)
     });
 
 }
 
+function custAlert(text){
+    $(".custAlert").text("").text(text);
+    $("#alertBtn").click()
+}
 
 //=========================
 //      utils
@@ -333,7 +317,7 @@ function isValidJSON(str) {
 }
 
 function loadScript(url, callback) {
-    var script = document.createElement("script")
+    var script = document.createElement("script");
     script.type = "text/javascript";
     if (script.readyState) {
         // IE
@@ -351,4 +335,22 @@ function loadScript(url, callback) {
     }
     script.src = url;
     document.getElementsByTagName("head")[0].appendChild(script);
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
 }
