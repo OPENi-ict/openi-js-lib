@@ -3,11 +3,18 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Test JS OPENi</title>
-    <script src="../openi-js-lib/openi_js_lib.js"></script>
+    <script src="/openi-js-lib/openi_js_lib.js"></script>
+    <script src="jquery-1.11.2.min.js"></script>
     <script src="tests.js"></script>
+
+
 </head>
 <body>
     Hello OPENi!!!
-    <button onclick="redirectToOPENiUserPermissions('velti', window.location.href)" style="display: block;margin-top: 10px;">Go to User Permissions</button>
+    <button onclick="showtoken()" style="display: block;margin-top: 10px;">Show your Cloudlet ID</button>
+    <button onclick="redirect()" style="display: block;margin-top: 10px;">Redirect to OPENi</button>
+
+    <button onclick="logouttoken()" style="display: block;margin-top: 10px;">Logout</button>
+
 </body>
 </html>
