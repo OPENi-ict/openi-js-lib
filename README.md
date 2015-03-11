@@ -91,5 +91,12 @@
 
 An example web application can be used at:
 
-    http://195.200.193.50:8888/index_demo2.html
+The following demo uses the Openi API that is deployed on demo2.openi-ict.eu server: 
+
+    http://195.200.193.50:8888/index_demo2.html  
+
+The following demo uses the Openi API that is deployed on the 195.200.193.50 server: 
+
+    http://195.200.193.50:8888/index_demo2.html    
+
 
