@@ -1,135 +1,95 @@
-OPENi-js-lib
-============
-Here you can find all the required details towards integrating your web application with OPENi via js SDK. 
+# Javascript SDK Usage Instructions
+-----
 
-Assumption: You have access to OPENi [demo2](https://demo2.openi-ict.eu) vm. 
+## openi\_js\_lib.js  must be included in your javascript project.
 
+## Initiate the SDK with:
 
-In the following sections you can find:
- 
-1. OPENi js SDK lib documentation as well as a small demo project. 
-1. WP4 demo projects that use in an axtended way OPENi js lib. 
-1. OPENi web Authorization/Authentication (tutorial and lib) 
-1. OPENi web Authorization/Authentication (tutorial and lib) 
+    initOPENi(domain,api_key, secret_key, redirect_link, permissions_file_link, function(){
 
+		//OPENi is initiated here
 
-# OPENi js SDK lib
- 
-You can use the openi-js-lib.js library in your project to initialize OPENi and use its helper functions or any other available OPENi Service/API which is 
-exposed through Swagger.
+	}, function (error) {
 
-Note: A simple demo app is included. This a demo HTML/Javascript project that uses the OPENi JS SDK/lib and is based on [demo2](https://demo2.openi-ict.eu) vm.
+    	//error initiating OPENi
+
+    });
 
 
 
-## Available helper functions:
+## Check login status to OPENi with:
 
-Note:All functions have success/error callbacks, which include the corresponding response.
+	checkLoginStatus(function (token){
+			
+		//User is logged in
+        
+	},function(){
 
-#### Initiate as.... 
+		//User is not logged in
 
-```
-initOPENi(openi_domain, success, error)
-```
+	}, function(permd){
 
- OPENi APIs will be available for use now. Run your code in success callback. 
+		//User has denied permissions
+	});
 
-* Example:
- Creating a new object in a Cloudlet within initOPENi success callback:*
+## Get Header object for API calls, with the Authorization header set:
 
+	addTokenHeader(function (args){
+				
+		//Authorization header contained in args object
 
+	}), function (error) {
 
-        var args = {
-            "cloudletId": cloudletId,
-            "Authorization": token
-        };
-        args.body = JSON.stringify({
-            "@openi_type": typeId,
-            "@data": data
-        });
-        swagger.apis.objects.createObject(args, function (response) {
-            console.log(response);
-            if (response.status == 201) {
-                console.log("Object created successfully.");
-                var objectId = JSON.parse(response.data);
-            }
-        }, function (error) {
-            console.log(error);
-        });
+          	//error setting OPENi Authorization Token Header
 
+    });
+    
+- OPENi API calls require an object containing the appropriate headers. The addTokenHeader function generates this object,
+ with the Authorization header set to the OPENi Authorization Token. Additional headers may need to be set, depending on
+ the API call
 
-#### Create a New User as...
+## OPENi calls can be executed inside the addTokenHeader function as such:
 
-````
-createUser(username, password, success, error)
-````
+	addTokenHeader(function (args){
 
-#### Check login status as...
+		//Authorization Token Header set in args object, use it to make API calls
+				
+		//Example: Search cloudlets based on type and properties 
+		
+		//Set additional headers specific to the search API call:
+		args["type"] = 't_20111c27fee71099a580c6e06332dbd7-163';
+		args["id_only"] = '';
+		args["property_filter"] = '';
 
-````
-checkLoginStatus(loggedIn, notLoggedIn)
-````
+		//search API call:
+		swagger.apis.search.search(args, function (response) {
+			var data = JSON.parse(response.data);
+			//handle result data
 
-#### Login and Existing User as...
+			}, function (swagger_error){
+                  
+				//handle API call error case
+			});
 
-````
-loginUser(username, password, clientId, success, error)
-````
+	}, function (error){
 
+		//handle error case of setting OPENi Authorization Token Header
+	});
 
-#### Create a New Object as...
-````
-createObject(cloudletId, typeId, data, token, success, error)
-````
+## Logout user with:
 
- "data" is a JSON object which addheres to the OPENi type of typeid
+    OPENi_logout(function () {
+		//User succesfully logged out
+    }, function (error) {
+		//Handle error on logout
+    })
+    
+## Redirect to OPENi Authorization Page with
+    redirectToOPENiAuthorization()
 
+## Demo application
 
-#### Search Objects whithin a Cloudlet via....
-```
-searchCloudletObjects(cloudletId, type, with_property, property_filter, id_only, token, success, error)
-```
+An example web application can be used at:
 
- Search whithin one Cloudlet.
+    http://195.200.193.50:8888/index_demo2.html
 
- cloudletId and token are required.
-
- type,with_property,property_filter,id_only can be empty ("") if not needed.
-
-
-#### Search an objects accross Cloudlets via ....
-````
-searchObjects(type, with_property, property_filter, id_only, token, success, error)
-````
-
- Like searchCloudletObjects, search across all cloudlets.
-
-#### Adds the Authorization header via...
-````
-addTokenHeader(token)
-````
-
-
-
-## WP4 demo projects that use in an axtended way OPENi js lib. 
-
-
-## OPENi web Authorization/Authentication (tutorial and lib)
-
-This section allows you to enable OPENi Registration/Log-in/Permissions dialogue.
-
-Using openi_js_lib.js library you can redirect the user to the OPENi user Authorization/Authentication page
-````
-redirectToOPENiUserAuth(clientId, redirectURI)
-````
-
-## OPENi web Permission Visualization (tutorial and lib) 
-
-This section allows you to enable OPENi Permission Visualization template.
-
-Using openi_js_lib.js library you can redirect the user to the OPENi user permissions page
-````
-redirectToOPENiUserPermissions(clientId, redirectURI)
-````
-
-**Demo app URL: https://demo2.openi-ict.eu/openi-js-auth/demo-js/**
