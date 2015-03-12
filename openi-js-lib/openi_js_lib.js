@@ -19,10 +19,10 @@ var global_openi_domain = "";//"demo2.openi-ict.eu"; //default
 //this is for VM testing
 //var AuthBackendSrv = "http://10.130.34.17:3000/auth/account";
 //this is for local testing
-var AuthBackendSrv = "http://localhost:3000/auth/account";
+//var AuthBackendSrv = "http://localhost:3000/auth/account";
 
 //When done, must be set to demo2.openi-ict.eu
-//var AuthBackendSrv = "http://demo2.openi-ict.eu/auth/account";
+var AuthBackendSrv = "http://demo2.openi-ict.eu/auth/account";
 
 
 
