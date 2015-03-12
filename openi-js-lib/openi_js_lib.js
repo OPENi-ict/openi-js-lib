@@ -2,28 +2,27 @@
  * Created by nstasinos on 18/11/2014.
  */
 
+console.log('open-js-lib.js');
 
 var api_key='';
 var secret_key='';
-var permissions='';
 var redirectlink='';
-
-
-var urlServer = "";//"https://demo2.openi-ict.eu/api-spec/v1"; //"https://"+window.location.host+"/api-spec/v1/cloudlet";    //default
+var urlServer = "";
 var openi_token = null;
-var global_openi_domain = "";//"demo2.openi-ict.eu"; //default
-//var openiUserPermPath = "/auth/user_permissions/openi_settings.html";
-//var openiUserAuthPath = "/auth/openi_account/openi_account.html";
+var global_openi_domain = "";
 
+//var permissions='';
 
 //this is for VM testing
-//var AuthBackendSrv = "http://10.130.34.17:3000/auth/account";
+//var AuthBackendSrv = "https://10.130.34.17/auth/account";
+var logoutlink = "";
+
+
 //this is for local testing
-//var AuthBackendSrv = "http://localhost:3000/auth/account";
+//var AuthBackendSrv = "";
 
 //When done, must be set to demo2.openi-ict.eu
 var AuthBackendSrv = "http://demo2.openi-ict.eu/auth/account";
-
 
 
 
@@ -40,57 +39,73 @@ var AuthBackendSrv = "http://demo2.openi-ict.eu/auth/account";
 //Encode it in Base64, prepare the link with api_key, secret, redirect link and permissions string
 //and redirect to it
 
-function redirectToOPENiAuthorization( success, error) {
+function redirectToOPENiAuthorization() {
+
+    //TODO: Switch codes to revert to Base 64 method
+    //console.log("Redirecting...");
+    //console.log('Permissions file at:'+permissions);
+    //getPermissionsFile(permissions, function (prm) {
+    //Base64 encoding of the array
+    //var encodedPerms = window.btoa(prm);
+    ////add parameters to link
+    //var link = AuthBackendSrv + '?api_key=' + api_key + "&secret=" + secret_key + "&redirectURL=" + redirectlink + "&appPerms=" + encodedPerms;
+    //location.replace(link);
+    //}, function (err) {
+    //    console.log("Error parsing permissions file");
+    //    console.log(err);
+    //    error(err);
+    //});
 
     console.log("Redirecting...");
-    console.log('Permissions file at:'+permissions);
-    
-    
-    //TODO: we do not fetch app permissions anymore. This will be handled in Auth Dialogs. Do not send AppPerms
-    
-    getPermissionsFile(permissions, function (prm) {
-
-        //Base64 encoding of the array
-        var encodedPerms = window.btoa(prm);
-        //add parameters to link
-        var link = AuthBackendSrv + '?api_key=' + api_key + "&secret=" + secret_key + "&redirectURL=" + redirectlink + "&appPerms=" + encodedPerms;
-        location.replace(link);
-
-    }, function (err) {
-        console.log("Error parsing permissions file");
-        console.log(err);
-        error(err);
-    });
-
+    //add parameters to link
+    var link = AuthBackendSrv + '?api_key=' + api_key + "&secret=" + secret_key + "&redirectURL=" + redirectlink;
+    console.log('link: ', link);
+    location.replace(link);
 
 }
 
 
-//Helping function that makes an ajax call to the link provided to retrieve the permissions
+//Helping function that makes an api call to OPENi to retrieve the permissions
 //To be used at redirect to Auth Server and for checking login status
 
 
-function getPermissionsFile(perms, success, error) {
+//function getPermissionsFile(perms,success, error) {
+function getPermissionsFile(success, error) {
 
-    console.log("Redirecting: Getting permissions file...");
+    console.log("Redirecting: Getting app permissions...");
 
-    //TODO: App Permissions should be pulled from OPENi with a swagger call instead of an ajax call
+    //// TODO: Switch codes once app_perms integrated. (Check nickname for correct call to app_permissions
+    var args = {
+        "Authorization": openi_token,
+        "api_key": api_key
+    };
+    console.log(openi_token);
+    swagger.apis.permissions.getAppPermissionsByApiKey(args, function (response) {
+        //var data = JSON.parse(response.data);
+        console.log(response.obj.result.permissions);
+        success(response.obj.result.permissions)
+    }, function (swagger_error) {
+        //error with swagger call
+        console.log(swagger_error);
+        error(swagger_error);
+    });
     
-    try {
-        var xmlhttp=new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                success(xmlhttp.responseText);
-            }
-        };
-        xmlhttp.open("GET", perms, true);
-        xmlhttp.send();
-    }
-    catch (err) {
-
-        console.log("ERRROR on AJAX call to permissions file");
-        error(err);
-    }
+    
+    //try {
+    //    var xmlhttp=new XMLHttpRequest();
+    //    xmlhttp.onreadystatechange = function() {
+    //        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    //            success(xmlhttp.responseText);
+    //        }
+    //    };
+    //    xmlhttp.open("GET", perms, true);
+    //    xmlhttp.send();
+    //}
+    //catch (err) {
+    //
+    //    console.log("ERRROR on AJAX call to permissions file");
+    //    error(err);
+    //}
 
 }
 
@@ -155,16 +170,22 @@ function checkLoginStatus(loggedIn, notLoggedIn, permissionsDenied) {
                 //if not, user has denied permissions --> permissions denied
 
                 
-                getPermissionsFile(permissions, function (perms){
+                getPermissionsFile(function (perms){
 
-                    //TODO: check if permissions are accepted. OPENi call get permissions
+
+                    //var appPerms = JSON.parse(perms);
+                    //appPerms = appPerms.permissions;
+
                     var args = {"Authorization": openi_token};
                     console.log(openi_token);
                     swagger.apis.permissions.getPermissions(args, function (response) {
                         var data = JSON.parse(response.data);
                         console.log(data);
-                        if (comparePermissions(data,JSON.parse(perms))) {
-                            console.log("Permissions found. User logged in");
+                        
+                        //if (comparePermissions(data,appPerms)) {
+                        if (comparePermissions(data,perms)) {
+
+                        console.log("Permissions found. User logged in");
                             loggedIn(openi_token);
                         } else {
                             console.log("Permissions denied.");
@@ -172,9 +193,9 @@ function checkLoginStatus(loggedIn, notLoggedIn, permissionsDenied) {
                         }
 
                     }, function (swagger_error) {
-                        //error with swagger call
+                        //error with swagger call, or Permissions not found
                         console.log(swagger_error);
-                        notLoggedIn();
+                        permissionsDenied(openi_token)                    
                     });
 
                 }, function (error) {
@@ -199,7 +220,12 @@ function checkLoginStatus(loggedIn, notLoggedIn, permissionsDenied) {
 
 //initOPENi loads scripts needed to initiate swagger
 
-function initOPENi(openi_domain,apikey, secret, redirectLink, permss, success, error) {
+//function initOPENi(openi_domain,apikey, secret, redirectLink, permss, success, error) {
+function initOPENi(openi_domain,apikey, secret, redirectLink, success, error) {
+
+    console.log('apiKey: ', apikey);
+    console.log('secret: ', secret);
+
     if (openi_domain != null || openi_domain != undefined) {
         urlServer = "https://" + openi_domain + "/api-spec/v1";
         global_openi_domain = openi_domain
@@ -214,10 +240,17 @@ function initOPENi(openi_domain,apikey, secret, redirectLink, permss, success, e
                         console.log("swagger is ready");
 
 
+
+                       AuthBackendSrv =  "https:/"+ global_openi_domain+"/auth/account";
+                       logoutlink = "https:/"+global_openi_domain + "/auth/logout";
+
+
                         api_key = apikey;
                         secret_key = secret;
                         redirectlink = redirectLink;
-                        permissions = permss;
+                        console.log('redirectLink: ', redirectlink);
+                        // permissions=perms;
+
 
                         if (!(getURLparam("OUST") == null)) {
                             //Token exists in URL, save ti to local storage
@@ -258,7 +291,7 @@ function OPENi_logout(success, error) {
         openi_token = null;
         localStorage.OUAT = null;
         console.log("Token deleted");
-        success();
+        location.replace(logoutlink);
     }
 }
 
