@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Permissions</title>
+        <link href="css/openi.css" rel="stylesheet" type="text/css">
+        <link href="bower_components/angular-toggle-switch/angular-toggle-switch.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body ng-app="openi-permission-visualization">
+
+        <div class="main_cont">
+
+            <div ng-view></div>
+
+        </div>
+
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bluebird/js/browser/bluebird.js"></script>
+        <script src="bower_components/angular-toggle-switch/angular-toggle-switch.js"></script>
+
+        <script src='shred.bundle.js' type='text/javascript'></script>
+        <script src='swagger-client.js' type='text/javascript'></script>
+
+        <script src="openi_swagger/initSwagger.js"></script>
+
+        <script src="app.js"></script>
+        <script src="modules/permission_visualization/permission_visualization.js"></script>
+        <script src="modules/profile/profile.js"></script>
+        <script src="modules/payment/payment.js"></script>
+        <script src="modules/device_profile/device_profile.js"></script>
+        <script src="modules/device_comp/device_comp.js"></script>
+        <script src="modules/contact_groups/contact_groups.js"></script>
+        <script src="modules/social_activity/social_activity.js"></script>
+        <script src="modules/media/media.js"></script>
+        <script src="modules/product_and_services/product_and_services.js"></script>
+        <script src="modules/health/health.js"></script>
+        <script src="modules/location/location.js"></script>
+        <script src="factories/globals.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,261 @@
+<span>
+        <!--  ----------------   Header    ----------------  -->
+    <div class="header">
+        <div class="h_icon"><img src="images/settings_icon.png" width="42" height="42"/></div>
+        <div class="title">SETTINGS</div>
+        <div class="main_action"><a id="perm_done">DONE</a></div>
+    </div>
+    <!--  --------------   end- Header    ------------  -->
+
+    <!--  ----------------   TOP    ----------------  -->
+    <div class="top">
+        <div class="sub_title">
+            OPENi
+        </div>
+    </div>
+    <!--  -------------   end - TOP    ------------  -->
+
+    <!--  ----------------   rv_icon_holder    ----------------  -->
+    <div class="rv_icon_holder">
+        <div class="rv_icon"><img src="images/recently_viewed.png" width="223" height="57"/></div>
+    </div>
+    <!--  -------------   end - rv_icon_holder    ------------  -->
+
+
+    <!--  ----------------   rv_main    ----------------  -->
+    <!-- <div class="rv_main">
+
+        <div id="profile2">
+            <div class="rv_title">My profile</div>
+            <div class="rv_check"><input type="checkbox" name="checkboxG1" id="checkboxG12" class="css-checkbox"/><label
+                    for="checkboxG1" class="css-label"></label></div>
+            <div class="rv_cont">
+                <div class="rv_text">Let apps access my profile such as name, picture and other account information.
+                </div>
+                <div class="rv_link"><a href="submenus/openi_profile.html">See more...</a></div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div> -->
+    <!--  ----------------   end - rv_main    ----------------  -->
+
+    <div class="line_break"></div>
+    <!--  ----------------   cont_main    ----------------  -->
+    <div class="cont_main">
+
+        <!-- ng-class="{'optedOut': globals.settings.profile.isExcluded === true } -->
+        <div id="profile" ng-show="globals.settings.profile.display">
+            <div class="rv_title">
+                User profile
+            </div>
+            <!-- ng-class="{'grayedOut': globals.settings.profile.isExcluded === true }" -->
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps access my profile such as name, picture and other account information.
+                </div>
+                <div class="rv_link">
+                    <a href="#/profile">
+                        See more...
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div id="wallet" ng-show="globals.settings.online_payment.display">
+            <div class="rv_title">
+                Online Payment
+            </div>
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps use my online wallet accounts
+                </div>
+                <div class="rv_link">
+                    <a href="#/payment">
+                        See more...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="device" ng-show="globals.settings.device_profile.display">
+            <div class="rv_title">
+                Device Profile
+            </div>
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps use my device unique identifiers (MAC, IP, UDID, UUID, Advertising ID).
+                </div>
+                <div class="rv_link">
+                    <a href="#/device_profile">
+                        See more...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="webcam" ng-show="globals.settings.device_comp.display">
+            <div class="rv_title">
+                Device Comp
+            </div>
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps use my Webcam and Microphone.
+                </div>
+                <div class="rv_link">
+                    <a href="#/device_comp">
+                        See more...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" ng-show="globals.settings.contact_group.display">
+            <div class="rv_title">
+                Contact/Groups
+            </div>
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps access my contacts information.
+                </div>
+                <div class="rv_link">
+                    <a href="#/contact_groups">
+                        See more...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="location" ng-show="globals.settings.location.display">
+            <div class="rv_title">Location</div>
+            <div class="rv_cont">
+                <div class="rv_text">Let apps use my locatio via:</div>
+
+                <div class="rv_text01">WiFi</div>
+                <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch1">
+                        <div class="onoffswitch-inner">
+                            <div class="onoffswitch-active">
+                                <div class="onoffswitch-switch">ON</div>
+                            </div>
+                            <div class="onoffswitch-inactive">
+                                <div class="onoffswitch-switch">OFF</div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div style="width:100%; float:left;">
+                    <div class="rv_text01">GPS</div>
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2"
+                               checked>
+                        <label class="onoffswitch-label" for="myonoffswitch2">
+                            <div class="onoffswitch-inner">
+                                <div class="onoffswitch-active">
+                                    <div class="onoffswitch-switch">ON</div>
+                                </div>
+                                <div class="onoffswitch-inactive">
+                                    <div class="onoffswitch-switch">OFF</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div style="width:100%; float:left;">
+                    <div class="rv_text01">3G/GPRS</div>
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch3"
+                               checked>
+                        <label class="onoffswitch-label" for="myonoffswitch3">
+                            <div class="onoffswitch-inner">
+                                <div class="onoffswitch-active">
+                                    <div class="onoffswitch-switch">ON</div>
+                                </div>
+                                <div class="onoffswitch-inactive">
+                                    <div class="onoffswitch-switch">OFF</div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="rv_link">
+                    <a href="#/location">
+                        See more...
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="social" ng-show="globals.settings.social_activity.display">
+            <div class="rv_title">
+                Social Activity
+            </div>
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps access information about my social activity.
+                </div>
+                <div class="rv_link">
+                    <a href="#/social_activity">
+                        See more...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="media" ng-show="globals.settings.media_files.display">
+            <div class="rv_title">
+                Media Files
+            </div>
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps use my media.
+                </div>
+                <div class="rv_link">
+                    <a href="#/media">
+                        See more...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="product" ng-show="globals.settings.product_and_services.display">
+            <div class="rv_title">
+                Product &amp; Services
+            </div>
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps use my services and product information.
+                </div>
+                <div class="rv_link">
+                    <a href="#/product_and_services">
+                        See more...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="health" ng-show="globals.settings.health_factors.display">
+            <div class="rv_title">
+                Health Factors &amp; Condition
+            </div>
+            <div class="rv_cont">
+                <div class="rv_text">
+                    Let apps access my health profile information
+                </div>
+                <div class="rv_link">
+                    <a href="#/health">
+                        See more...
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</span>
+

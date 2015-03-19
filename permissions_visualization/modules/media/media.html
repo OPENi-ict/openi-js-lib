@@ -1,0 +1,127 @@
+<span>
+        <!--  ----------------   Header    ----------------  -->
+          <div class="header">
+              <div class="h_icon"><img src="../images/settings_icon.png" width="42" height="42" /></div>
+              <div class="title">SETTINGS</div>
+              <div class="main_action">
+                  <a href="javascript:void(0)" ng-click="save()">
+                      DONE
+                  </a>
+              </div>
+          </div>
+    <!--  --------------   end- Header    ------------  -->
+
+    <!--  ----------------   TOP    ----------------  -->
+    <a href="#/permission_visualization">
+        <div class="top">
+            <div class="sub_title_b">
+                <img src="../images/arrow.png" width="30" height="30" border="0" align="absmiddle" />
+                OPENi
+            </div>
+        </div>
+    </a>
+    <!--  -------------   end - TOP    ------------  -->
+
+    <!--  ----------------   cont_main    ----------------  -->
+    <div class="cont_main">
+        <div class="rv_title">My online wallet accounts</div>
+        <!--<div class="rv_check">-->
+        <!--<input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" />-->
+        <!--<label for="checkboxG1" class="css-label"></label>-->
+        <!--</div>-->
+        <div class="rv_cont">
+            <div class="rv_text">Let apps use my media.</div>
+            <div class="rv_text pad_T15">Assign the following alterations to:</div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--  ----------------   end - cont_main    ----------------  -->
+
+    <!--  ----------------   buttons    ----------------  -->
+    <div class="action_ca" align="center" style="margin-bottom: 20px"><a href="#"><img src="../images/current_app_tab.png" width="291" height="47" border="0" /></a></div>
+    <!--  --------------   end- buttons    ------------  -->
+
+        <div class="acc_b">
+            <div class="acc_title_d">
+                <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
+                &nbsp;
+                Article
+            </div>
+            <div class="ac_check">
+                <input type="checkbox" ng-model="globals.settings.media_files.types[0].isOptedIn">
+            </div>
+        </div><div class="clearfix"></div>
+
+            <div class="acc_b">
+                <div class="acc_title_d">
+                    <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
+                    &nbsp;
+                    Audio
+                </div>
+                <div class="ac_check">
+                    <input type="checkbox" ng-model="globals.settings.media_files.types[1].isOptedIn">
+                </div>
+            </div><div class="clearfix"></div>
+
+                <div class="acc_b">
+                    <div class="acc_title_d">
+                        <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
+                        &nbsp;
+                        File
+                    </div>
+                    <div class="ac_check">
+                        <input type="checkbox" ng-model="globals.settings.media_files.types[2].isOptedIn">
+                    </div>
+                </div><div class="clearfix"></div>
+
+                    <div class="acc_b">
+                        <div class="acc_title_d">
+                            <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
+                            &nbsp;
+                            Photo
+                        </div>
+                        <div class="ac_check">
+                            <input type="checkbox" ng-model="globals.settings.media_files.types[3].isOptedIn">
+                        </div>
+                    </div><div class="clearfix"></div>
+
+                        <div class="acc_b">
+                            <div class="acc_title_d">
+                                <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
+                                &nbsp;
+                                Video
+                            </div>
+                            <div class="ac_check">
+                                <input type="checkbox" ng-model="globals.settings.media_files.types[4].isOptedIn">
+                            </div>
+                        </div><div class="clearfix"></div>
+
+                            <div class="acc_b">
+                                <div class="acc_title_d">
+                                    <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
+                                    &nbsp;
+                                    Playlist
+                                </div>
+                                <div class="ac_check">
+                                    <input type="checkbox" ng-model="globals.settings.media_files.types[5].isOptedIn">
+                                </div>
+                            </div><div class="clearfix"></div>
+
+                                <div class="acc_b">
+                                    <div class="acc_title_d">
+                                        <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
+                                        &nbsp;
+                                        Folder
+                                    </div>
+                                    <div class="ac_check">
+                                        <input type="checkbox" ng-model="globals.settings.media_files.types[6].isOptedIn">
+                                    </div>
+                                </div><div class="clearfix"></div>
+
+    <!--  ----------------   FOOTER    ----------------  -->
+    <div class="footer">
+        <div class="f_link01"><a href="#">HOME</a></div>
+        <div class="f_link02"><a href="#">SIGN OUT</a></div>
+    </div>
+    <!--  --------------   end- FOOTER    ------------  -->
+</span>
