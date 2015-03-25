@@ -6,23 +6,21 @@ angular.module('openi-permission-visualization.device_comp', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/device_comp', {
-            templateUrl: 'modules/device_comp/device_comp.html',
+            templateUrl: 'views/setting.html',
             controller: 'deviceCompCtrl'
         });
     }])
 
-    .controller('deviceCompCtrl', ['$scope', 'globalsFactory', function($scope, globals) {
+    .controller('deviceCompCtrl', ['$scope', '$controller', function($scope, $controller) {
 
-        console.log('deviceCompCtrl()');
+        console.log('deviceCompCtrlCtrl()');
 
-        authorizations.add("authorization", new ApiKeyAuthorization('authorization', globals.authToken, 'header'));
+        $controller('settingProtoCtrl', {$scope: $scope});
 
-        var DIMENSION = 'device_comp';
+        $scope.DIMENSION = 'device_comp';
 
-        $scope.globals = globals;
+        $scope.title = 'Device Comp';
 
-        $scope.save = function () {
-            globals.save(swagger, DIMENSION);
-        };
+        $scope.description = 'Let apps use my Webcam and Microphone.';
 
     }]);

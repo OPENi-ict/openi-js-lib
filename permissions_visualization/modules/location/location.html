@@ -1,167 +1,57 @@
 <span>
-        <!--  ----------------   Header    ----------------  -->
-          <div class="header">
-              <div class="h_icon"><img src="../images/settings_icon.png" width="42" height="42" /></div>
-              <div class="title">SETTINGS</div>
-              <div class="main_action">
-                  <a href="javascript:void(0)" ng-click="save()">
-                      DONE
-                  </a>
-              </div>
-          </div>
-    <!--  --------------   end- Header    ------------  -->
 
-    <!--  ----------------   TOP    ----------------  -->
-     <a href="#/permission_visualization">
-         <div class="top">
-             <div class="sub_title_b">
-                 <img src="../images/arrow.png" width="30" height="30" border="0" align="absmiddle" />
-                 OPENi
-             </div>
-         </div>
-     </a>
-    <!--  -------------   end - TOP    ------------  -->
+    <setting-header></setting-header>
 
-    <!--  ----------------   cont_main    ----------------  -->
-    <div class="cont_main">
-        <div class="rv_title">My online wallet accounts</div>
-        <!--<div class="rv_check">-->
-        <!--<input type="checkbox" name="checkboxG1" id="checkboxG1" class="css-checkbox" />-->
-        <!--<label for="checkboxG1" class="css-label"></label>-->
-        <!--</div>-->
-        <div class="rv_cont">
-            <div class="rv_text">Let apps use my location via: </div>
+        <div class="cont_main">
+            <div class="rv_title">{{title}}</div>
 
-            <div class="rv_text01">WiFi</div>
-            <div class="onoffswitch">
-                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
-                <label class="onoffswitch-label" for="myonoffswitch1">
-                    <div class="onoffswitch-inner">
-                        <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
-                        <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
+            <div class="rv_cont">
+                <div class="rv_text">{{description}}</div>
+
+                <div class="rv_text01">WiFi</div>
+                <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch1">
+                        <div class="onoffswitch-inner">
+                            <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
+                            <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
+                        </div>
+                    </label>
+                </div>
+
+                <div style="width:100%; float:left;">
+                    <div class="rv_text01">GPS</div>
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2" checked>
+                        <label class="onoffswitch-label" for="myonoffswitch2">
+                            <div class="onoffswitch-inner">
+                                <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
+                                <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
+                            </div>
+                        </label>
                     </div>
-                </label>
-            </div>
-
-            <div style="width:100%; float:left;">
-                <div class="rv_text01">GPS</div>
-                <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2" checked>
-                    <label class="onoffswitch-label" for="myonoffswitch2">
-                        <div class="onoffswitch-inner">
-                            <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
-                            <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
-                        </div>
-                    </label>
                 </div>
-            </div>
 
 
-            <div style="width:100%; float:left;">
-                <div class="rv_text01">3G/GPRS</div>
-                <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch3" checked>
-                    <label class="onoffswitch-label" for="myonoffswitch3">
-                        <div class="onoffswitch-inner">
-                            <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
-                            <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
-                        </div>
-                    </label>
+                <div style="width:100%; float:left;">
+                    <div class="rv_text01">3G/GPRS</div>
+                    <div class="onoffswitch">
+                        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch3" checked>
+                        <label class="onoffswitch-label" for="myonoffswitch3">
+                            <div class="onoffswitch-inner">
+                                <div class="onoffswitch-active"><div class="onoffswitch-switch">ON</div></div>
+                                <div class="onoffswitch-inactive"><div class="onoffswitch-switch">OFF</div></div>
+                            </div>
+                        </label>
+                    </div>
                 </div>
+
+                <div class="clearfix"></div>
             </div>
-
-
-            <div class="rv_text pad_T15">Assign the following alterations to:</div>
-            <div class="clearfix"></div>
         </div>
-    </div>
-    <!--  ----------------   end - cont_main    ----------------  -->
 
-    <!--  ----------------   buttons    ----------------  -->
-    <div class="action_ca" align="center" style="margin-bottom: 20px"><a href="#"><img src="../images/current_app_tab.png" width="291" height="47" border="0" /></a></div>
-    <!--  --------------   end- buttons    ------------  -->
+    <setting-types></setting-types>
 
-        <div class="acc_b">
-            <div class="acc_title_d">
-                <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
-                &nbsp;
-                Event
-            </div>
-            <div class="ac_check">
-                <input type="checkbox" ng-model="globals.settings.location.types[0].isOptedIn">
-            </div>
-        </div><div class="clearfix"></div>
+    <setting-footer></setting-footer>
 
-            <div class="acc_b">
-                <div class="acc_title_d">
-                    <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
-                    &nbsp;
-                    Places
-                </div>
-                <div class="ac_check">
-                    <input type="checkbox" ng-model="globals.settings.location.types[1].isOptedIn">
-                </div>
-            </div><div class="clearfix"></div>
-
-            <div class="acc_b">
-                <div class="acc_title_d">
-                    <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
-                    &nbsp;
-                    Route
-                </div>
-                <div class="ac_check">
-                    <input type="checkbox" ng-model="globals.settings.location.types[2].isOptedIn">
-                </div>
-            </div><div class="clearfix"></div>
-
-            <div class="acc_b">
-                <div class="acc_title_d">
-                    <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
-                    &nbsp;
-                    Review
-                </div>
-                <div class="ac_check">
-                    <input type="checkbox" ng-model="globals.settings.location.types[3].isOptedIn">
-                </div>
-            </div><div class="clearfix"></div>
-
-            <div class="acc_b">
-                <div class="acc_title_d">
-                    <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
-                    &nbsp;
-                    Checkin
-                </div>
-                <div class="ac_check">
-                    <input type="checkbox" ng-model="globals.settings.location.types[4].isOptedIn">
-                </div>
-            </div><div class="clearfix"></div>
-
-            <div class="acc_b">
-                <div class="acc_title_d">
-                    <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
-                    &nbsp;
-                    Status
-                </div>
-                <div class="ac_check">
-                    <input type="checkbox" ng-model="globals.settings.location.types[5].isOptedIn">
-                </div>
-            </div><div class="clearfix"></div>
-
-                    <div class="acc_b">
-                        <div class="acc_title_d">
-                            <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
-                            &nbsp;
-                            Shop
-                        </div>
-                        <div class="ac_check">
-                            <input type="checkbox" ng-model="globals.settings.location.types[6].isOptedIn">
-                        </div>
-                    </div><div class="clearfix"></div>
-
-    <!--  ----------------   FOOTER    ----------------  -->
-    <div class="footer">
-        <div class="f_link01"><a href="#">HOME</a></div>
-        <div class="f_link02"><a href="#">SIGN OUT</a></div>
-    </div>
-    <!--  --------------   end- FOOTER    ------------  -->
 </span>

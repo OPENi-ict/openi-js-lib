@@ -6,23 +6,21 @@ angular.module('openi-permission-visualization.media', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/media', {
-            templateUrl: 'modules/media/media.html',
+            templateUrl: 'views/setting.html',
             controller: 'mediaCtrl'
         });
     }])
 
-    .controller('mediaCtrl', ['$scope', 'globalsFactory', function($scope, globals) {
+    .controller('mediaCtrl', ['$scope', '$controller', function($scope, $controller) {
 
         console.log('mediaCtrl()');
 
-        authorizations.add("authorization", new ApiKeyAuthorization('authorization', globals.authToken, 'header'));
+        $controller('settingProtoCtrl', {$scope: $scope});
 
-        var DIMENSION = 'media_files';
+        $scope.DIMENSION = 'media_files';
 
-        $scope.globals = globals;
+        $scope.title = 'Media Files';
 
-        $scope.save = function () {
-            globals.save(swagger, DIMENSION);
-        };
+        $scope.description = 'Let apps use my media.';
 
     }]);

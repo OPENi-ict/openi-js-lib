@@ -1,0 +1,29 @@
+<span>
+
+    <div ng-repeat="t in globals.settings[DIMENSION].types">
+        <div class="acc_b"
+             ng-show="t.display"
+             ng-class="{'grayedOut': t.hasObjects === false}">
+            <div class="acc_title_d">
+                <img src="../images/reviews.png" width="29" height="41" align="absmiddle" />
+                &nbsp;
+                {{t.label}}
+            </div>
+            <div class="ac_check">
+                <input type="checkbox"
+                       ng-if="t.hasObjects"
+                       name="{{t.label}}"
+                       id="{{t.label}}"
+                       class="css-checkbox"
+                       ng-model="t.isOptedIn"/>
+                <label for="{{t.label}}" class="css-label" ng-disabled="!t.hasObjects"></label>
+                <input type="checkbox"
+                       ng-if="!t.hasObjects"
+                       ng-model="t.isOptedIn"
+                       ng-disabled="!t.hasObjects">
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+</span>

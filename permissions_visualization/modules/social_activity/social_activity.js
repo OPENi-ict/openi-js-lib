@@ -6,23 +6,22 @@ angular.module('openi-permission-visualization.social_activity', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/social_activity', {
-            templateUrl: 'modules/social_activity/social_activity.html',
+            templateUrl: 'views/setting.html',
             controller: 'socialActivityCtrl'
         });
     }])
 
-    .controller('socialActivityCtrl', ['$scope', 'globalsFactory', function($scope, globals) {
+
+    .controller('socialActivityCtrl', ['$scope', '$controller', function($scope, $controller) {
 
         console.log('socialActivityCtrl()');
 
-        authorizations.add("authorization", new ApiKeyAuthorization('authorization', globals.authToken, 'header'));
+        $controller('settingProtoCtrl', {$scope: $scope});
 
-        var DIMENSION = 'social_activity';
+        $scope.DIMENSION = 'social_activity';
 
-        $scope.globals = globals;
+        $scope.title = 'Social Activity';
 
-        $scope.save = function () {
-            globals.save(swagger, DIMENSION);
-        };
+        $scope.description = 'Let apps access information about my social activity.';
 
     }]);

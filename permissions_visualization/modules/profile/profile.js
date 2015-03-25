@@ -6,35 +6,21 @@ angular.module('openi-permission-visualization.profile', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/profile', {
-            templateUrl: 'modules/profile/profile.html',
+            templateUrl: 'views/setting.html',
             controller: 'ProfileCtrl'
         });
     }])
 
-    .controller('ProfileCtrl', ["$scope", 'globalsFactory', function($scope, globals) {
+    .controller('ProfileCtrl', ['$scope', '$controller', function($scope, $controller) {
 
         console.log('ProfileCtrl()');
 
-        authorizations.add("authorization", new ApiKeyAuthorization('authorization', globals.authToken, 'header'));
+        $controller('settingProtoCtrl', {$scope: $scope});
 
-        var DIMENSION = 'profile';
+        $scope.DIMENSION = 'profile';
 
-        $scope.globals = globals;
+        $scope.title = 'My Profile';
 
-        $scope.isReady = false;
-
-//        globals.getPermissions(swagger)
-//            .done(function (permissions) {
-//                console.log('getPermissions: ', permissions);
-//                $scope.globals.permissions = permissions;
-//                globals.permissions = permissions;
-//                $scope.isReady = true;
-//            },function (error) {
-//                console.log('error: ', error);
-//            });
-
-        $scope.save = function () {
-            globals.save(swagger, DIMENSION);
-        };
+        $scope.description = 'Let apps access my profile such as name, picture and other account information.';
 
     }]);

@@ -21,8 +21,21 @@ angular.module('openi-permission-visualization.permission_visualization', ['ngRo
 
         $scope.isReady = false;
 
+        $scope.save = function () {
+            window.location.replace(globals.homeUrl);
+        };
+
         //initSwagger(globals.authToken, globals.cloudletId, globals.serverURL)
-        initSwagger(globals.authToken, globals.cloudletId, globals.serverURL)
+        (function () {
+            if (globals.swagger) {
+                return Promise.resolve();
+            } else {
+                return initSwagger(globals.authToken, globals.cloudletId, globals.serverURL);
+            }
+        })()
+            .then(function () {
+                return globals.initAppManifest(swagger);
+            })
             .then(function () {
                 globals.swagger = swagger;
                 globals.isReady = true;
@@ -43,10 +56,15 @@ angular.module('openi-permission-visualization.permission_visualization', ['ngRo
                 return Promise.resolve();
             })
             .then(function () {
+                return globals.filterOutTypesWithoutObj(swagger);
+            })
+            .then(function () {
                 return globals.initPermissions(swagger);
             })
             .done(function () {
                 console.log('globals.settings: ', globals.settings);
+                $scope.isReady = true;
+                $scope.$apply();
             }, function (error) {
                 console.log('error: ', error);
             });

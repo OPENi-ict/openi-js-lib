@@ -296,7 +296,7 @@ body {
 	padding-top:10px;
 }
 .rv_check {
-	float:right;
+	/*float:right;*/
 	color:#0298ca;
 	text-decoration:none;
 	padding-top:10px;
@@ -492,8 +492,27 @@ input[type=checkbox].css-checkbox {
     margin-left: 0;
 }
 
-div.rv_cont.grayedOut {
-    background-color: gray;
+div.grayedOut {
+    background-color: #2b2b2d;
 }
+
+div.acc_b.grayedOut {
+    background-color: #212122;
+}
+
+input[type='checkbox'] {
+    height: 20px;
+    width: 20px;
+}
+
+/*input.ng-pristine.ng-untouched.ng-valid {*/
+    /*height: 20px;*/
+    /*width: 20px;*/
+/*}*/
+
+/*input.ng-valid.ng-dirty.ng-valid-parse.ng-touched {*/
+    /*height: 20px;*/
+    /*width: 20px;*/
+/*}*/
 
 /**********************************************************************************************************************************/

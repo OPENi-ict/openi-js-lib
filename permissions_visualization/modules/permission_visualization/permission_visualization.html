@@ -1,51 +1,49 @@
 <span>
-        <!--  ----------------   Header    ----------------  -->
+
+    <span us-spinner="{radius:30, width:8, length: 16}"></span>
+    isSpinnerActive: {{spinnerActive}}
+
     <div class="header">
         <div class="h_icon"><img src="images/settings_icon.png" width="42" height="42"/></div>
         <div class="title">SETTINGS</div>
         <div class="main_action"><a id="perm_done">DONE</a></div>
     </div>
-    <!--  --------------   end- Header    ------------  -->
 
-    <!--  ----------------   TOP    ----------------  -->
     <div class="top">
         <div class="sub_title">
             OPENi
         </div>
     </div>
-    <!--  -------------   end - TOP    ------------  -->
 
-    <!--  ----------------   rv_icon_holder    ----------------  -->
     <div class="rv_icon_holder">
         <div class="rv_icon"><img src="images/recently_viewed.png" width="223" height="57"/></div>
     </div>
-    <!--  -------------   end - rv_icon_holder    ------------  -->
-
-
-    <!--  ----------------   rv_main    ----------------  -->
-    <!-- <div class="rv_main">
-
-        <div id="profile2">
-            <div class="rv_title">My profile</div>
-            <div class="rv_check"><input type="checkbox" name="checkboxG1" id="checkboxG12" class="css-checkbox"/><label
-                    for="checkboxG1" class="css-label"></label></div>
-            <div class="rv_cont">
-                <div class="rv_text">Let apps access my profile such as name, picture and other account information.
-                </div>
-                <div class="rv_link"><a href="submenus/openi_profile.html">See more...</a></div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-
-    </div> -->
-    <!--  ----------------   end - rv_main    ----------------  -->
 
     <div class="line_break"></div>
-    <!--  ----------------   cont_main    ----------------  -->
-    <div class="cont_main">
 
-        <!-- ng-class="{'optedOut': globals.settings.profile.isExcluded === true } -->
-        <div id="profile" ng-show="globals.settings.profile.display">
+    <div class="cont_main" ng-show="isReady">
+
+        <!-- TODO use this eliminate duplicate html code -->
+        <!--<div ng-repeat="dimension in Object.keys(globals.settings).sort(function (a, b) { return a.displayOrder - b.displayOrder })"-->
+             <!--ng-show="globals.settings[dimension].display">-->
+            <!--<div class="rv_title">-->
+                <!--{{globals.settings[dimension].title}}-->
+            <!--</div>-->
+            <!--<div class="rv_cont">-->
+                <!--<div class="rv_text">-->
+                    <!--{{globals.settings[dimension].description}}-->
+                <!--</div>-->
+                <!--<div class="rv_link">-->
+                    <!--<a href="{{globals.settings[dimension].route}}">-->
+                        <!--See more...-->
+                    <!--</a>-->
+                <!--</div>-->
+                <!--<div class="clearfix"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div ng-show="globals.settings.profile.display"
+             ng-class="{'grayedOut': globals.settings.profile.hasObjects === false}">
             <div class="rv_title">
                 User profile
             </div>
@@ -63,7 +61,8 @@
             </div>
         </div>
 
-        <div id="wallet" ng-show="globals.settings.online_payment.display">
+        <div ng-show="globals.settings.online_payment.display"
+                ng-class="{'grayedOut': globals.settings.online_payment.hasObjects === false}">
             <div class="rv_title">
                 Online Payment
             </div>
@@ -76,10 +75,12 @@
                         See more...
                     </a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
 
-        <div id="device" ng-show="globals.settings.device_profile.display">
+        <div ng-show="globals.settings.device_profile.display"
+                ng-class="{'grayedOut': globals.settings.device_profile.hasObjects === false}">
             <div class="rv_title">
                 Device Profile
             </div>
@@ -92,10 +93,12 @@
                         See more...
                     </a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
 
-        <div id="webcam" ng-show="globals.settings.device_comp.display">
+        <div ng-show="globals.settings.device_comp.display"
+                ng-class="{'grayedOut': globals.settings.device_comp.hasObjects === false}">
             <div class="rv_title">
                 Device Comp
             </div>
@@ -108,10 +111,12 @@
                         See more...
                     </a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
 
-        <div id="contact" ng-show="globals.settings.contact_group.display">
+        <div ng-show="globals.settings.contact_group.display"
+                ng-class="{'grayedOut': globals.settings.contact_group.hasObjects === false}">
             <div class="rv_title">
                 Contact/Groups
             </div>
@@ -124,10 +129,12 @@
                         See more...
                     </a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
 
-        <div id="location" ng-show="globals.settings.location.display">
+        <div ng-show="globals.settings.location.display"
+                ng-class="{'grayedOut': globals.settings.location.hasObjects === false}">
             <div class="rv_title">Location</div>
             <div class="rv_cont">
                 <div class="rv_text">Let apps use my locatio via:</div>
@@ -188,11 +195,12 @@
                         See more...
                     </a>
                 </div>
-
+                <div class="clearfix"></div>
             </div>
         </div>
 
-        <div id="social" ng-show="globals.settings.social_activity.display">
+        <div ng-show="globals.settings.social_activity.display"
+             ng-class="{'grayedOut': globals.settings.social_activity.hasObjects === false}">
             <div class="rv_title">
                 Social Activity
             </div>
@@ -205,10 +213,12 @@
                         See more...
                     </a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
 
-        <div id="media" ng-show="globals.settings.media_files.display">
+        <div ng-show="globals.settings.media_files.display"
+             ng-class="{'grayedOut': globals.settings.media_files.hasObjects === false}">
             <div class="rv_title">
                 Media Files
             </div>
@@ -221,10 +231,12 @@
                         See more...
                     </a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
 
-        <div id="product" ng-show="globals.settings.product_and_services.display">
+        <div ng-show="globals.settings.product_and_services.display"
+             ng-class="{'grayedOut': globals.settings.product_and_services.hasObjects === false}">
             <div class="rv_title">
                 Product &amp; Services
             </div>
@@ -237,10 +249,12 @@
                         See more...
                     </a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
 
-        <div id="health" ng-show="globals.settings.health_factors.display">
+        <div ng-show="globals.settings.health_factors.display"
+             ng-class="{'grayedOut': globals.settings.health_factors.hasObjects === false}">
             <div class="rv_title">
                 Health Factors &amp; Condition
             </div>
@@ -253,6 +267,7 @@
                         See more...
                     </a>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
 

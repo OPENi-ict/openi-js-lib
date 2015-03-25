@@ -11,18 +11,16 @@ angular.module('openi-permission-visualization.location', ['ngRoute'])
         });
     }])
 
-    .controller('locationCtrl', ['$scope', 'globalsFactory', function($scope, globals) {
+    .controller('locationCtrl', ['$scope', '$controller', function($scope, $controller) {
 
         console.log('locationCtrl()');
 
-        authorizations.add("authorization", new ApiKeyAuthorization('authorization', globals.authToken, 'header'));
+        $controller('settingProtoCtrl', {$scope: $scope});
 
-        var DIMENSION = 'contact_group';
+        $scope.DIMENSION = 'location';
 
-        $scope.globals = globals;
+        $scope.title = 'Location';
 
-        $scope.save = function () {
-            globals.save(swagger, DIMENSION);
-        };
+        $scope.description = 'Let apps use my location via: ';
 
     }]);

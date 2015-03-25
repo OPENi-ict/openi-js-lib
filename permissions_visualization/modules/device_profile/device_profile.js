@@ -6,23 +6,21 @@ angular.module('openi-permission-visualization.device_profile', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/device_profile', {
-            templateUrl: 'modules/device_profile/device_profile.html',
+            templateUrl: 'views/setting.html',
             controller: 'deviceProfileCtrl'
         });
     }])
 
-    .controller('deviceProfileCtrl', ['$scope', 'globalsFactory', function($scope, globals) {
+    .controller('deviceProfileCtrl', ['$scope', '$controller', function($scope, $controller) {
 
         console.log('deviceProfileCtrl()');
 
-        authorizations.add("authorization", new ApiKeyAuthorization('authorization', globals.authToken, 'header'));
+        $controller('settingProtoCtrl', {$scope: $scope});
 
-        var DIMENSION = 'device_profile';
+        $scope.DIMENSION = 'device_profile';
 
-        $scope.globals = globals;
+        $scope.title = 'Device Profile';
 
-        $scope.save = function () {
-            globals.save(swagger, DIMENSION);
-        };
+        $scope.description = 'Let apps use my device unique identifiers (such as: MAC, IP, UDID, UUID, Advertising ID).';
 
     }]);

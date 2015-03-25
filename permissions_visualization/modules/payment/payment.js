@@ -6,23 +6,21 @@ angular.module('openi-permission-visualization.payment', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/payment', {
-            templateUrl: 'modules/payment/payment.html',
+            templateUrl: 'views/setting.html',
             controller: 'paymentCtrl'
         });
     }])
 
-    .controller('paymentCtrl', ['$scope', 'globalsFactory', function($scope, globals) {
+    .controller('paymentCtrl', ['$scope', '$controller', function($scope, $controller) {
 
-        console.log('payment()');
+        console.log('paymentCtrl()');
 
-        authorizations.add("authorization", new ApiKeyAuthorization('authorization', globals.authToken, 'header'));
+        $controller('settingProtoCtrl', {$scope: $scope});
 
-        var DIMENSION = 'online_payment';
+        $scope.DIMENSION = 'online_payment';
 
-        $scope.globals = globals;
+        $scope.title = 'Online Payment';
 
-        $scope.save = function () {
-            globals.save(swagger, DIMENSION);
-        };
+        $scope.description = 'Let apps use my access online wallet accounts for experiences across apps.';
 
     }]);

@@ -9,6 +9,8 @@ angular
             [
                 'ngRoute',
                 'toggle-switch',
+                'toastr',
+                'ngLoadingSpinner',
                 'openi-permission-visualization.permission_visualization',
                 'openi-permission-visualization.profile',
                 'openi-permission-visualization.payment',

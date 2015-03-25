@@ -6,23 +6,21 @@ angular.module('openi-permission-visualization.health', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/health', {
-            templateUrl: 'modules/health/health.html',
+            templateUrl: 'views/setting.html',
             controller: 'healthCtrl'
         });
     }])
 
-    .controller('healthCtrl', ['$scope', 'globalsFactory', function($scope, globals) {
+    .controller('healthCtrl', ['$scope', '$controller', function($scope, $controller) {
 
         console.log('healthCtrl()');
 
-        authorizations.add("authorization", new ApiKeyAuthorization('authorization', globals.authToken, 'header'));
+        $controller('settingProtoCtrl', {$scope: $scope});
 
-        var DIMENSION = 'health_factors';
+        $scope.DIMENSION = 'health_factors';
 
-        $scope.globals = globals;
+        $scope.title = 'Health Factors and Conditions';
 
-        $scope.save = function () {
-            globals.save(swagger, DIMENSION);
-        };
+        $scope.description = 'Let apps access my health profile information.';
 
     }]);
