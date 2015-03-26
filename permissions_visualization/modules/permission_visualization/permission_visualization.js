@@ -23,7 +23,7 @@ angular.module('openi-permission-visualization.permission_visualization', ['ngRo
 
         $scope.leave = function () {
             if (globals.homeUrl !== '') {
-                $location.path(globals.homeUrl);
+                location.replace(globals.homeUrl);
             }
         };
 
