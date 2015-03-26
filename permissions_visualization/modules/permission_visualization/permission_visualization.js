@@ -11,7 +11,7 @@ angular.module('openi-permission-visualization.permission_visualization', ['ngRo
         });
     }])
 
-    .controller('indexCtrl', ['$scope', 'globalsFactory', function($scope, globals) {
+    .controller('indexCtrl', ['$scope', '$location', 'globalsFactory', function($scope, $location, globals) {
 
         console.log('indexCtrl()');
 
