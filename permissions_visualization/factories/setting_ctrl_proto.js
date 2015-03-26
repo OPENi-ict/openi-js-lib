@@ -30,7 +30,7 @@ angular.module('openi-permission-visualization')
 
         $scope.leave = function () {
             if (globals.homeUrl !== '') {
-                $location.path(globals.homeUrl);
+                location.replace(globals.homeUrl);
             }
         };
 
