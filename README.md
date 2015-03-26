@@ -105,5 +105,11 @@ The following demo uses the Openi API that is deployed on demo2.openi-ict.eu ser
 The following demo uses the Openi API that is deployed on the 195.200.193.50 server: 
 
     http://195.200.193.50:8888/index_demo2.html    
+	
+The following demo uses the Openi API that is deployed on the demo2.openi-ict.eu server:, 
+and it displays the functionality of the Permission Visualization.
+The permission visualization page is currently being served by the http://195.200.193.50:8888 server : 
+
+    http://195.200.193.50:8888/index_demo2_permissions.html    
 
 
