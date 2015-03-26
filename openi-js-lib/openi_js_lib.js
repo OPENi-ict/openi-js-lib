@@ -83,7 +83,12 @@ function redirectToOPENiPermissions (_host, _homeUrl) {
     }
 
     var authToken = null;
-    authToken = getUrlParameter('OUST');
+    if (typeof(openi_token) !== 'undefined' && openi_token !== null) {
+        authToken = openi_token;
+    } else {
+      authToken = getUrlParameter('OUST');
+    }
+
 
     if (authToken) {
         var url = _host +
