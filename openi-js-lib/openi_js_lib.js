@@ -64,6 +64,46 @@ function redirectToOPENiAuthorization() {
 
 }
 
+function redirectToOPENiPermissions (_host, _homeUrl) {
+
+    if (typeof(_host) === 'undefined' || _host === null) {
+        console.log('host is not specified');
+        return;
+    }
+
+    function getUrlParameter(urlParam) {
+        var pageURL = window.location.search.substring(1);
+        var urlVariables = pageURL.split('&');
+        for (var i = 0; i < urlVariables.length; i++) {
+            var parameterName = urlVariables[i].split('=');
+            if (parameterName[0] == urlParam) {
+                return parameterName[1];
+            }
+        }
+    }
+
+    var authToken = null;
+    authToken = getUrlParameter('OUST');
+
+    if (authToken) {
+        var url = _host +
+            '/permissions_visualization/index.html?api_key='
+            + API_KEY +
+            '&secret=' +
+            SECRET +
+            '&oust=' +
+            authToken;
+        if (typeof(_homeUrl) !== 'undefined' && _homeUrl !== null) {
+            url = url + '&home_url=' + _homeUrl + '&OUST=' + authToken;
+        }
+        console.log('url: ', url);
+        location.replace(url);
+    } else {
+        console.log('no auth token is specified');
+    }
+
+}
+
 
 //Helping function that makes an api call to OPENi to retrieve the permissions
 //To be used at redirect to Auth Server and for checking login status
