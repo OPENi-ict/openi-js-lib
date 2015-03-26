@@ -21,8 +21,10 @@ angular.module('openi-permission-visualization.permission_visualization', ['ngRo
 
         $scope.isReady = false;
 
-        $scope.save = function () {
-            window.location.replace(globals.homeUrl);
+        $scope.leave = function () {
+            if (globals.homeUrl !== '') {
+                $location.path(globals.homeUrl);
+            }
         };
 
         //initSwagger(globals.authToken, globals.cloudletId, globals.serverURL)
