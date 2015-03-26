@@ -13,7 +13,15 @@ angular.module('openi-permission-visualization')
         $scope.globals = globals;
 
         $scope.save = function () {
-            globals.save(swagger, $scope.DIMENSION);
+            $scope.isReady = false;
+            globals.save(swagger, $scope.DIMENSION)
+                .done(function () {
+                    $scope.isReady = true;
+                    $scope.$apply();
+                }, function () {
+                    $scope.isReady = true;
+                    $scope.$apply();
+                });
         };
 
         $scope.redirectToHome = function () {
@@ -25,5 +33,7 @@ angular.module('openi-permission-visualization')
                 $location.path(globals.homeUrl);
             }
         };
+
+        $scope.isReady = true;
 
     }]);
