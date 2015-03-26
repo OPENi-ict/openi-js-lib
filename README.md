@@ -87,6 +87,13 @@
 ## Redirect to OPENi Authorization Page with
     redirectToOPENiAuthorization()
 
+## Redirect to OPENi Permission Visualization Page with
+
+    redirectToOPENiPermissions(host, home)
+    
+    host: the host which serves the Permission Visualization page (this will probably be the same host that serves the Openi js SDK ).
+    home: the page to be redirected when leaving the Permissions Visualization page
+
 ## Demo application
 
 An example web application can be used at:
