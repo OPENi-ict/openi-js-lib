@@ -28,7 +28,7 @@ angular.module('openi-permission-visualization')
             $location.path("permission_visualization");
         };
 
-        $scope.leavePermissionVisualization = function () {
+        $scope.leave = function () {
             if (globals.homeUrl !== '') {
                 $location.path(globals.homeUrl);
             }
