@@ -38,10 +38,13 @@ angular.module('openi-permission-visualization.permission_visualization', ['ngRo
             .then(function () {
                 return globals.initAppManifest(swagger);
             })
+//            .then(function () {
+//                globals.swagger = swagger;
+//                globals.isReady = true;
+//                return globals.getAppPermissions(swagger);
+//            })
             .then(function () {
-                globals.swagger = swagger;
-                globals.isReady = true;
-                return globals.getAppPermissions(swagger);
+                return globals.getPermissions(swagger);
             })
             .then(function (appPermissions) {
                 console.log('---> ', appPermissions);

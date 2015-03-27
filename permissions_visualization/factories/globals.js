@@ -70,6 +70,7 @@ angular.module('openi-permission-visualization')
         };
 
         globals.initAppManifest = function (swagger) {
+            console.log('initAppManifest()');
             return globals.appManifest ? Promise.resolve() : globals.getAppPermissions(swagger, true);
         };
 
@@ -152,81 +153,81 @@ angular.module('openi-permission-visualization')
                     }
                 });
 
-                globals.settings[dimension].types.forEach(function (type) {
-                    console.log('type: ', type);
-                    console.log('globals.appPermissions: ', globals.appPermissions);
-                    globals.appPermissions.permissions.forEach(function (p) {
-                        console.log('p: ', p);
-                        if (p.ref === type.id) {
-                            if (type.isOptedIn === false) {
-                                console.log('===========');
-                            } else {
-                                console.log('!!!!!!!!!!!!');
-                                newPermissions.push(p);
-                            }
-                        }
-                    });
-                });
-
-                globals.settings[dimension].types.forEach(function (type) {
-                    console.log('type: ', type);
-                    if (type.isOptedIn) {
-                        ACCESS_TYPES.forEach(function (accessType) {
-                            var perm = {
-                                "type": "type",
-                                "ref": type.id,
-                                "access_type": accessType,
-                                "access_level": "APP"
-                            };
-                            additionalPermissions.push(perm);
-                        });
-                    }
-                });
-                var totalPermissions = newPermissions.concat(additionalPermissions);
-                console.log('newPermissions: ', newPermissions);
-                console.log('additionalPermissions: ', additionalPermissions);
-                console.log('totalPermissions: ', totalPermissions);
-                totalPermissions = _.uniq(totalPermissions, false, function (item) {
-                    return '' + item.type + item.ref + item.access_type + item.access_level;
-                });
-                console.log('totalPermissions: ', totalPermissions);
-                console.log('---------------->: ', totalPermissions);
-
-                var openiTypes = globals.appPermissionTypes.filter(function (t) {
-                    var includeType = false;
-                    totalPermissions.forEach(function (p) {
-                        if (!includeType) {
-                            if (p.ref === t['@id']) {
-                                includeType = true;
-                            }
-                        }
-                    });
-                    return includeType;
-                });
-
-                var params = {
-                    body: JSON.stringify({
-                        "app_api_key": globals.apiKey,
-                        "permissions": totalPermissions,
-                        "types": openiTypes
-                    })
-                };
-
-                console.log('::::::::: ', params);
-
-                swagger.apis.permissions.createAppPermissions(params, function (result) {
-                    console.log('save resolve()');
-                    toastr.success('permissions saved', 'Success', {
-                        timeOut: 1000
-                    });
-                    resolve();
-                }, function (error) {
-                    console.log('error: ', error);
-                    toastr.error('permission not saved', 'Server failure', {
-                        timeOut: 1000
-                    });
-                    reject(error);
-                });
+//                globals.settings[dimension].types.forEach(function (type) {
+//                    console.log('type: ', type);
+//                    console.log('globals.appPermissions: ', globals.appPermissions);
+//                    globals.appPermissions.permissions.forEach(function (p) {
+//                        console.log('p: ', p);
+//                        if (p.ref === type.id) {
+//                            if (type.isOptedIn === false) {
+//                                console.log('===========');
+//                            } else {
+//                                console.log('!!!!!!!!!!!!');
+//                                newPermissions.push(p);
+//                            }
+//                        }
+//                    });
+//                });
+//
+//                globals.settings[dimension].types.forEach(function (type) {
+//                    console.log('type: ', type);
+//                    if (type.isOptedIn) {
+//                        ACCESS_TYPES.forEach(function (accessType) {
+//                            var perm = {
+//                                "type": "type",
+//                                "ref": type.id,
+//                                "access_type": accessType,
+//                                "access_level": "APP"
+//                            };
+//                            additionalPermissions.push(perm);
+//                        });
+//                    }
+//                });
+//                var totalPermissions = newPermissions.concat(additionalPermissions);
+//                console.log('newPermissions: ', newPermissions);
+//                console.log('additionalPermissions: ', additionalPermissions);
+//                console.log('totalPermissions: ', totalPermissions);
+//                totalPermissions = _.uniq(totalPermissions, false, function (item) {
+//                    return '' + item.type + item.ref + item.access_type + item.access_level;
+//                });
+//                console.log('totalPermissions: ', totalPermissions);
+//                console.log('---------------->: ', totalPermissions);
+//
+//                var openiTypes = globals.appPermissionTypes.filter(function (t) {
+//                    var includeType = false;
+//                    totalPermissions.forEach(function (p) {
+//                        if (!includeType) {
+//                            if (p.ref === t['@id']) {
+//                                includeType = true;
+//                            }
+//                        }
+//                    });
+//                    return includeType;
+//                });
+//
+//                var params = {
+//                    body: JSON.stringify({
+//                        "app_api_key": globals.apiKey,
+//                        "permissions": totalPermissions,
+//                        "types": openiTypes
+//                    })
+//                };
+//
+//                console.log('::::::::: ', params);
+//
+//                swagger.apis.permissions.createAppPermissions(params, function (result) {
+//                    console.log('save resolve()');
+//                    toastr.success('permissions saved', 'Success', {
+//                        timeOut: 1000
+//                    });
+//                    resolve();
+//                }, function (error) {
+//                    console.log('error: ', error);
+//                    toastr.error('permission not saved', 'Server failure', {
+//                        timeOut: 1000
+//                    });
+//                    reject(error);
+//                });
 
 //                toastr.success('permissions saved', 'Success', {
 //                    timeOut: 1000
@@ -235,70 +236,70 @@ angular.module('openi-permission-visualization')
 
                 //////////
 
-//                swagger.apis.permissions.getPermissions(function (permissions) {
-//
-//                    globals.settings[dimension].types.forEach(function (type) {
-//                        console.log('type: ', type);
-//                        console.log('permissions: ', permissions);
-//                        permissions.obj.forEach(function (p) {
-//                            console.log('p: ', p);
-//                            if (p.ref === type.id) {
-//                                if (type.isOptedIn === false) {
-//                                    console.log('===========');
-//                                } else {
-//                                    console.log('!!!!!!!!!!!!');
-//                                    newPermissions.push(p);
-//                                }
-//                            }
-//                        });
-//                    });
-//                    var additionalPermissions = [];
-//                    globals.settings[dimension].types.forEach(function (type) {
-//                        console.log('type: ', type);
-//                        if (type.isOptedIn) {
-//                            ACCESS_TYPES.forEach(function (accessType) {
-//                                var perm =  {
-//                                    "type": "type",
-//                                    "ref": type.id,
-//                                    "access_type": accessType,
-//                                    "access_level": "APP"
-//                                };
-//                                additionalPermissions.push(perm);
-//                            });
-//                        }
-//                    });
-//                    var totalPermissions = newPermissions.concat(additionalPermissions);
-//                    console.log('newPermissions: ', newPermissions);
-//                    console.log('additionalPermissions: ', additionalPermissions);
-//                    console.log('totalPermissions: ', totalPermissions);
-//                    _.uniq(totalPermissions, false, function (item) {
-//                        return item.type + item.ref + item.access_type + item.access_level;
-//                    });
-//                    console.log('totalPermissions: ', totalPermissions);
-//                    console.log('---------------->: ', totalPermissions);
-//                    var params = {
-//                        body: JSON.stringify(totalPermissions)
-//                    };
-//                    swagger.apis.permissions.updatePermissions(params, function (result) {
-//                        console.log('save resolve()');
-//                        toastr.success('permissions saved', 'Success', {
-//                            timeOut: 1000
-//                        });
-//                        resolve();
-//                    }, function (error) {
-//                        console.log('error: ', error);
-//                        toastr.error('permission not saved', 'Server failure', {
-//                            timeOut: 1000
-//                        });
-//                        reject(error);
-//                    });
-//                }, function (error) {
-//                    console.log('error');
-//                    toastr.error('permission not saved', 'Server failure', {
-//                        timeOut: 1000
-//                    });
-//                    reject(error);
-//                });
+                swagger.apis.permissions.getPermissions(function (permissions) {
+
+                    globals.settings[dimension].types.forEach(function (type) {
+                        console.log('type: ', type);
+                        console.log('permissions: ', permissions);
+                        permissions.obj.forEach(function (p) {
+                            console.log('p: ', p);
+                            if (p.ref === type.id) {
+                                if (type.isOptedIn === false) {
+                                    console.log('===========');
+                                } else {
+                                    console.log('!!!!!!!!!!!!');
+                                    newPermissions.push(p);
+                                }
+                            }
+                        });
+                    });
+                    var additionalPermissions = [];
+                    globals.settings[dimension].types.forEach(function (type) {
+                        console.log('type: ', type);
+                        if (type.isOptedIn) {
+                            ACCESS_TYPES.forEach(function (accessType) {
+                                var perm =  {
+                                    "type": "type",
+                                    "ref": type.id,
+                                    "access_type": accessType,
+                                    "access_level": "APP"
+                                };
+                                additionalPermissions.push(perm);
+                            });
+                        }
+                    });
+                    var totalPermissions = newPermissions.concat(additionalPermissions);
+                    console.log('newPermissions: ', newPermissions);
+                    console.log('additionalPermissions: ', additionalPermissions);
+                    console.log('totalPermissions: ', totalPermissions);
+                    _.uniq(totalPermissions, false, function (item) {
+                        return item.type + item.ref + item.access_type + item.access_level;
+                    });
+                    console.log('totalPermissions: ', totalPermissions);
+                    console.log('---------------->: ', totalPermissions);
+                    var params = {
+                        body: JSON.stringify(totalPermissions)
+                    };
+                    swagger.apis.permissions.updatePermissions(params, function (result) {
+                        console.log('save resolve()');
+                        toastr.success('permissions saved', 'Success', {
+                            timeOut: 1000
+                        });
+                        resolve();
+                    }, function (error) {
+                        console.log('error: ', error);
+                        toastr.error('permission not saved', 'Server failure', {
+                            timeOut: 1000
+                        });
+                        reject(error);
+                    });
+                }, function (error) {
+                    console.log('error');
+                    toastr.error('permission not saved', 'Server failure', {
+                        timeOut: 1000
+                    });
+                    reject(error);
+                });
             });
         };
 
@@ -310,7 +311,8 @@ angular.module('openi-permission-visualization')
             console.log('globals.settings:', globals.settings);
             console.log('appPermissions: ', appPermissions);
             console.log('globals.appManifest: ', globals.appManifest);
-            var appPermissionsIds = appPermissions.permissions.map(function (i) {
+            console.log(':::: ', appPermissions);
+            var appPermissionsIds = appPermissions.map(function (i) {
                 return i.ref;
             });
             var appManifestIds = globals.appManifest.permissions.map(function (i) {
