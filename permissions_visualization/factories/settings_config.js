@@ -197,7 +197,7 @@ angular.module('openi-permission-visualization')
                         "id": "t_f57e85d10963ba6a099aebce8ab6dc37-818",
                         "label": "Photo",
                         "isOptedIn": false,
-                        "display": true,
+                        "display": false,
                         "hasObjects": false
                     },
                     {
