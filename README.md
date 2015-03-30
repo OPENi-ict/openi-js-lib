@@ -91,8 +91,8 @@
 
     redirectToOPENiPermissions(host, home)
     
-    host: the host which serves the Permission Visualization page.
-    home: the page to be redirected when leaving the Permissions Visualization page.
+    host: (String) the host/host:port which serves the Permission Visualization page.
+    home: (string) the URL to be redirected when leaving the Permissions Visualization page.
 	
 	Instructions: 
 	
@@ -114,10 +114,14 @@ The following demo uses the Openi API that is deployed on the 195.200.193.50 ser
 
     http://195.200.193.50:8888/index_demo2.html    
 	
-The following demo uses the Openi API that is deployed on the demo2.openi-ict.eu server:, 
-and it displays the functionality of the Permission Visualization.
-The permission visualization page is currently being served by the http://195.200.193.50:8888 server : 
+The following demo uses the Openi API that is deployed on the demo2.openi-ict.eu server. 
+It displays the Permission Visualization functionality.
+The Permission Visualization page is being served by the http://195.200.193.50:8888 server.
+The source code(index_demo2_permissions.html, test_demo2_permissions.js) for the demo application can be found at https://github.com/OPENi-ict/openi-js-lib/tree/master/demo-js
+The demo application is accessible at:
 
     http://195.200.193.50:8888/index_demo2_permissions.html    
+
+
 
 
