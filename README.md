@@ -91,8 +91,16 @@
 
     redirectToOPENiPermissions(host, home)
     
-    host: the host which serves the Permission Visualization page (this will probably be the same host that serves the Openi js SDK ).
-    home: the page to be redirected when leaving the Permissions Visualization page
+    host: the host which serves the Permission Visualization page.
+    home: the page to be redirected when leaving the Permissions Visualization page.
+	
+	Instructions: 
+	
+	1) configure an http server(host:port), to serve the contents of the https://github.com/OPENi-ict/openi-js-lib/tree/master/permissions_visualization folder
+	on an HTTP GET http://host:port/permissions_visualization request. This host:port will be used at step 3.
+	2) include the https://github.com/OPENi-ict/openi-js-lib/blob/master/openi-js-lib/openi_js_lib.js script to your web application .
+	3) When a user has successfully logged in using the redirectToOPENiAuthorization() method, The user can be redirected to the Permission Visualization page by
+	 executing the method: redirectToOPENiPermissions (host, home); 
 
 ## Demo application
 
