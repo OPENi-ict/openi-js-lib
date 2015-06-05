@@ -5,7 +5,7 @@
 
 ## Initiate the SDK with:
 
-    initOPENi(domain, api_key, secret_key, redirect_link, function(){
+    initOPENi(openi_url, api_key, secret_key, redirect_link, function(){
 
 		//OPENi is initiated here
 
